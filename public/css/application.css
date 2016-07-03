@@ -75,10 +75,6 @@ nav li a {
     text-decoration: none;
 }
 
-nav a:hover:not(.active) {
+nav a:hover {
     background-color: #5AC8EC;
-}
-
-.active {
-background-color:#5AC8EC;
 }
