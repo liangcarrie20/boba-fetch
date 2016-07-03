@@ -1,0 +1,8 @@
+<% if current_user %>
+
+<h1>Hi, <%= @user.first_name %>!</h1>
+<p>Edit your profile</p>
+
+<% else %>
+<p>You've encountered an error</p>
+<% end %>
