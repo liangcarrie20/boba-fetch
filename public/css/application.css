@@ -1,12 +1,13 @@
 #site-name {
   font-family: 'Lobster', cursive;
-  font-size: 5em;
+  font-size: 4.5em;
+  display: center;
 }
 
 #boba-pic {
   float: right;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 60%;
+  max-height: 60%;
   display: inline-block;
 }
 
@@ -49,7 +50,12 @@ input {
   margin-top: 50px;
 }
 
-ul {
+nav {
+  max-width: 100%;
+  font-size: .80em;
+}
+
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -57,11 +63,11 @@ ul {
     background-color: #DCDCDC;
 }
 
-li {
+nav li {
     float: left;
 }
 
-li a {
+nav li a {
     display: block;
     color: white;
     text-align: center;
