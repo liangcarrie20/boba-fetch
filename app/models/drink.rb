@@ -1,3 +1,7 @@
 class Drink < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :shop
+  has_many :reviews
+
+  validates :name, presence: true
+  validates :shop_id, presence: true
 end
