@@ -30,8 +30,7 @@
         <li><a href="/">Home</a></li>
         <% if current_user %>
         <li><a href="/users/<%= @current_user.id %>">Profile</a></li>
-        <li><form method="post" action="/sessions/<%=@current_user.id %>">
-          <input type="hidden" name="_method" value="delete"><input type="submit" value="Logout"></form></li>
+        <li><a href="/sessions/delete">Logout</a></li>
         <% else %>
         <li><a href="/users/new">Register</a></li>
         <li><a href="/sessions/new">Login</a></li>
