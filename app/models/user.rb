@@ -1,3 +1,15 @@
 class User < ActiveRecord::Base
-  # Remember to create a migration!
+  include BCrypt
+  validates :username, uniqueness: true
+  validates :email, uniqueness: true
+  has_secure_password
+
+  def self.authenticate(username, password)
+    @user = User.find_by(username: username)
+    if @user.password == password
+      return @user
+    else
+      nil
+    end
+  end
 end
