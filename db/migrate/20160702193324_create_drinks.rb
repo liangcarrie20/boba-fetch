@@ -5,5 +5,6 @@ class CreateDrinks < ActiveRecord::Migration
       t.integer :shop_id
 
       t.timestamps(null: false)
+    end
   end
 end

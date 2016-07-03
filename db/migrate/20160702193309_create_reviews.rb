@@ -8,5 +8,6 @@ class CreateReviews < ActiveRecord::Migration
       t.integer :shop_id, presence: true
 
       t.timestamps(null: false)
+    end
   end
 end
