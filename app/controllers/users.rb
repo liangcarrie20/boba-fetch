@@ -1,12 +1,12 @@
 get '/users' do
-  redirect '/users/:id'
+  erb :"users/show"
 end
 
 get '/users/new' do
   erb :'users/new'
 end
 
-post "/users" do
+post '/users' do
   @user = User.new(params[:user])
 
   if @user.save
@@ -17,7 +17,7 @@ post "/users" do
   end
 end
 
-get "/users/:id" do
+get '/users/:id' do
   @user = current_user
   erb :"/users/show"
 end
