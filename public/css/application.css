@@ -1,8 +1,18 @@
+#site-name {
+  font-family: 'Lobster', cursive;
+  font-size: 8em;
+}
+
+#boba-pic {
+  float: right;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .container {
   margin: 20px auto;
-  width: 800px;
+  width: 80%;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
   font-family: 'Lobster', cursive;
 }
 
@@ -36,4 +46,32 @@ input {
 
 .caballo-form {
   margin-top: 50px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #DCDCDC;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover:not(.active) {
+    background-color: #5AC8EC;
+}
+
+.active {
+background-color:#5AC8EC;
 }
