@@ -1,0 +1,33 @@
+<div>
+  <h1>Create a Boba Fetch Account!</h1>
+</div>
+<div class="col-sm-10">
+  <% if @error %>
+  <%= @error %>
+  <% end %>
+</div>
+<div>
+<form action='/users' method='post'>
+    <fieldset>
+      <input type="text" name ="user[first_name]" placeholder="First name">
+    </fieldset>
+
+    <fieldset>
+      <input type="text" name ="user[last_name]" placeholder="Last name">
+    </fieldset>
+
+    <fieldset>
+      <input type="text" name ="user[username]" placeholder="username">
+    </fieldset>
+
+    <fieldset>
+      <input type="email" id="email" name ="user[email]" placeholder="Email">
+    </fieldset>
+
+    <fieldset>
+      <input type="password" name="user[password]" placeholder="Password">
+    </fieldset>
+
+    <input type="submit" value="Go">
+  </form>
+</div>
