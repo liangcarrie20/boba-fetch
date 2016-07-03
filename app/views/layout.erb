@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width">
 <head>
   <!-- 
     normalize.css removes cross-browser differences in defaults, e.g.,
@@ -17,9 +18,22 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Boba Fetch</title>
+
 </head>
 <body>
+  <header>
+  <img id="boba-pic" src="/boba.png"/>
+  <p id="site-name">Boba Fetch</p>
+    <nav>
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
   <%= yield %>
 </body>
 </html>
