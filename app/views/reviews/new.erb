@@ -1,0 +1,39 @@
+<div class="container">
+  <%= @shop.name %><br>
+  <%= @shop.address %><br>
+  <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
+  <%= @reviews.count %> reviews<br>
+
+  <p>Add a new review for <%= @shop.name %>!</p>
+  <% if @error %>
+  <%= @error %>
+  <% end %>
+  <form action='/shops/<%= @shop.id %>/reviews' method='POST'>
+   <input type="hidden" name="review[user_id]" value="<%= current_user.id %>">
+   <input type="hidden" name="review[shop_id]" value="<%= @shop.id %>">
+
+   <select name="review[drink_id]">
+    <% @drinks.each do |drink| %>
+    <option value="<%= drink.id%>"><%= drink.name %></option>
+    <% end %>
+  </select>
+
+  <select name="review[rating]">
+    <option value="5">5 stars</option>
+    <option value="4">4 stars</option>
+    <option value="3">3 stars</option>
+    <option value="2">2 stars</option>
+    <option value="1">1 stars</option>
+  </select>
+
+  <fieldset>
+    <label for="body">Body:</label>
+    <input type="text" name="review[body]" placeholder="Review goes here...">
+  </fieldset>
+
+  <button type="submit">Submit</button>
+</form>
+  <p>OR</p>
+  <p><a href="/shops/<%= @shop.id %>/drinks/new">Add a new drink</a></p>
+</div>
+
