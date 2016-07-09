@@ -19,5 +19,6 @@ end
 
 get '/users/:id' do
   @user = current_user
+  @reviews = Review.where(user_id: @user.id)
   erb :"/users/show"
 end
