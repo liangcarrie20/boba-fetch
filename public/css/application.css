@@ -10,6 +10,11 @@
   font-style: italic;
 }
 
+.shop-info {
+  font-weight: bold;
+  border: 1px dotted black;
+}
+
 #site-name {
   font-family: 'Lobster', cursive;
   font-size: 4.5em;
