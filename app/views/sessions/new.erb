@@ -1,19 +1,21 @@
-<div>
-  <% if @error %>
-  <%= @error %>
-  <% end %>
-</div>
-<div>
-  <h1>Log in to Boba Fetch</h1>
-</div>
-<div>
-  <form action="/sessions" method="post">
-    <fieldset>   
-      <input type="text" name="user[username]" placeholder="Username">
-    </fieldset>
-    <fieldset>
-      <input type="password" name="user[password]" placeholder="Password">
-    </fieldset>
-    <input type="submit" value="Go">
-  </form>
+<div class="container">
+  <div>
+    <% if @error %>
+    <%= @error %>
+    <% end %>
+  </div>
+  <div>
+    <h1>Log in to Boba Fetch</h1>
+  </div>
+  <div>
+    <form action="/sessions" method="post">
+      <fieldset>   
+        <input type="text" name="user[username]" placeholder="Username">
+      </fieldset>
+      <fieldset>
+        <input type="password" name="user[password]" placeholder="Password">
+      </fieldset>
+      <input type="submit" value="Go">
+    </form>
+  </div>
 </div>
