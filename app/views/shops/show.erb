@@ -1,9 +1,9 @@
+<div id="map"></div>
 <div class="container">
+    <%= @shop.name %>: <%= @reviews.count %> reviews<br>
   <div class="shop-info">
-    <%= @shop.name %><br>
     <%= @shop.address %><br>
     <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
-    <%= @reviews.count %> reviews<br>
   </div>
   <% @reviews.each do |review| %>
   <% @shop_id = review.shop_id %>
@@ -12,6 +12,7 @@
   <% @drink_name = Drink.find(@drink_id).name %>
   <% @user_id = review.user_id %>
   <% @user_username = User.find(@user_id).username %>
+  <p>Reviews:</p>
   <div class="index-review">
     <div class="timestamp">on: <%= review.updated_at %></div>
     <div class="reviewer"><a href="/users/<%=@user_id%>"><%= @user_username %></a> says:</div>
@@ -23,9 +24,6 @@
     <a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a></li>
       <a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a></li>
 </div>
-  <div class="map-div">
-    <p>Google map goes here...</p>
-  </div>
 <% else %>
 <div class="container">
   <p>Log in to add shops, drinks, and reviews!</p>

@@ -2,10 +2,10 @@ img {
   float: left;
 }
 
-.map-div {
-  width: 100%;
-  border: 1px dotted black;
-  height: 18em;
+html, body, #map {
+  height: 20em;
+  width: 20em;
+  margin: auto;
 }
 
 #site-name {
@@ -17,16 +17,11 @@ img {
   border: 1px dotted black;
 }
 
-.shop-name {
-  font-weight: bold;
-}
-
 .drink-name {
   font-style: italic;
 }
 
 .shop-info {
-  font-weight: bold;
   border: 1px dotted black;
   width: 100%;
 }
