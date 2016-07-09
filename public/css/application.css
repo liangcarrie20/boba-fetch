@@ -2,6 +2,12 @@ img {
   float: left;
 }
 
+.map-div {
+  width: 100%;
+  border: 1px dotted black;
+  height: 18em;
+}
+
 #site-name {
   float: left;
   clear: both; 
@@ -22,6 +28,7 @@ img {
 .shop-info {
   font-weight: bold;
   border: 1px dotted black;
+  width: 100%;
 }
 
 #site-name {

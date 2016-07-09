@@ -8,29 +8,32 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="/bubbletea.ico" />
-  <title>Boba Fetch</title>
+  <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['SECRET_TOKEN'] %>&callback=initMap">
+</script>
+<title>Boba Fetch</title>
 </head>
 <body>
   <div class="container">
     <div class="row">
       <header>
-      <div id="site-name"><img src="/boba-fetch-1.png" alt="site-logo" />Boba Fetch
-      </div>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/shops">Shops</a></li>
-          <% if current_user %>
-          <li><a href="/users/<%= @current_user.id %>">Profile</a></li>
-          <li><a href="/sessions/delete">Logout</a></li>
-          <% else %>
-          <li><a href="/users/new">Register</a></li>
-          <li><a href="/sessions/new">Login</a></li>
-          <% end %>
-        </ul>
-      </nav>
-    </header>
-  </div>
-  <%= yield %>
-</body>
-</html>
+        <div id="site-name"><img src="/boba-fetch-1.png" alt="site-logo" />Boba Fetch
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/shops">Shops</a></li>
+            <% if current_user %>
+            <li><a href="/users/<%= @current_user.id %>">Profile</a></li>
+            <li><a href="/sessions/delete">Logout</a></li>
+            <% else %>
+            <li><a href="/users/new">Register</a></li>
+            <li><a href="/sessions/new">Login</a></li>
+            <% end %>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <%= yield %>
+  </body>
+  </html>
