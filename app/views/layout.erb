@@ -2,42 +2,33 @@
 <html lang="en">
 <meta name="viewport" content="width=device-width">
 <head>
-  <!-- 
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/application.css">
-
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
-
   <title>Boba Fetch</title>
-
 </head>
 <body>
-  <header>
-    <!-- <img id="boba-pic" src="/boba.png"/> -->
-    <div id="site-name">Boba Fetch</div>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <% if current_user %>
-        <li><a href="/users/<%= @current_user.id %>">Profile</a></li>
-        <li><a href="/sessions/delete">Logout</a></li>
-        <% else %>
-        <li><a href="/users/new">Register</a></li>
-        <li><a href="/sessions/new">Login</a></li>
-        <% end %>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <div class="row">
+      <header>
+        <h1>Boba Fetch</h1>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <% if current_user %>
+            <li><a href="/users/<%= @current_user.id %>">Profile</a></li>
+            <li><a href="/sessions/delete">Logout</a></li>
+            <% else %>
+            <li><a href="/users/new">Register</a></li>
+            <li><a href="/sessions/new">Login</a></li>
+            <% end %>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  </div>
   <%= yield %>
 </body>
 </html>
