@@ -13,21 +13,21 @@
   <div class="container">
     <div class="row">
       <header>
-        <h1>Boba Fetch</h1>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <% if current_user %>
-            <li><a href="/users/<%= @current_user.id %>">Profile</a></li>
-            <li><a href="/sessions/delete">Logout</a></li>
-            <% else %>
-            <li><a href="/users/new">Register</a></li>
-            <li><a href="/sessions/new">Login</a></li>
-            <% end %>
-          </ul>
-        </nav>
-      </header>
-    </div>
+        <div id="site-name">Boba Fetch</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <% if current_user %>
+          <li><a href="/users/<%= @current_user.id %>">Profile</a></li>
+          <li><a href="/sessions/delete">Logout</a></li>
+          <% else %>
+          <li><a href="/users/new">Register</a></li>
+          <li><a href="/sessions/new">Login</a></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
   </div>
   <%= yield %>
 </body>
