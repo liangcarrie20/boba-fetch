@@ -18,11 +18,6 @@
   font-family: 'Lobster', cursive;
 }
 
-.errors {
-  display: inline-block;
-  color: #33CCCC;
-}
-
 h2 {
   text-align: center;
 }
@@ -43,11 +38,6 @@ input {
   float: left;
   margin-top: 10px;
   margin-top: 2em;
-
-}
-
-.caballo-form {
-  margin-top: 50px;
 }
 
 nav {
