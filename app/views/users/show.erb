@@ -1,8 +1,9 @@
-<% if current_user %>
+<div class="container">
+  <% if current_user %>
 
-<h1>Welcome, <%= @user.first_name %>!</h1>
-<p>PROFILE PAGE HERE</p>
-
-<% else %>
-<p>You've encountered an error</p>
-<% end %>
+  <div class="profile-welcome">Welcome, <%= @user.first_name %>!</div>
+  <p>PROFILE PAGE HERE</p>
+  <% else %>
+  <p>You've encountered an error.</p>
+  <% end %>
+</div>
