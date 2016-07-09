@@ -1,0 +1,24 @@
+<div class="shop-info">
+  <%= @shop.name %><br>
+  <%= @shop.address %><br>
+  <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
+  <%= @reviews.count %> reviews<br>
+</div>
+
+<div class="container">
+  <p>Add a new drink for <%= @shop.name %>!</p>
+  <% if @error %>
+  <%= @error %>
+  <% end %>
+  <form action='/shops/<%= @shop.id %>/drinks' method='POST'>
+   <input type="hidden" name="drink[shop_id]" value="<%= @shop.id %>">
+
+  <fieldset>
+    <label for="name">Drink name:</label>
+    <input type="text" name="drink[name]" placeholder="Drink name">
+  </fieldset>
+
+  <button type="submit">Submit</button>
+</form>
+</div>
+
