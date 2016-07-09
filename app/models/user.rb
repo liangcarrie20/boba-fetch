@@ -5,8 +5,10 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_secure_password
 
-  before_save { |user| user.username = user.username.downcase }
-  before_save { |user| user.email = user.email.downcase }
+  before_save do
+    self.username = self.username.downcase
+    self.email = self.email.downcase
+  end
 
   def self.authenticate(username, password)
     @user = User.find_by(username: username)
