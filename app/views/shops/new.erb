@@ -1,0 +1,37 @@
+<div class="container">
+  <p>Add a new shop on Boba Fetch!</p>
+</div>
+<div class="container">
+  <% if @error %>
+  <%= @error %>
+  <% end %>
+  <form action='/shops' method='POST'>
+
+     <fieldset>
+      <label for="name">Shop Name</label>
+      <input type="text" name="shop[name]" placeholder="Shop name">
+    </fieldset>
+
+    <fieldset>
+      <label for="address">Address</label>
+      <input type="text" name="shop[address]" placeholder="Address">
+    </fieldset>
+
+    <fieldset>
+      <label for="city">City</label>
+      <input type="text" name="shop[city]" placeholder="City">
+    </fieldset>
+
+    <fieldset>
+      <label for="state">State</label>
+      <input type="text" name="shop[state]" placeholder="State">
+    </fieldset>
+
+    <fieldset>
+      <label for="zip">Zip</label>
+      <input type="text" name="shop[zip]" placeholder="Zip">
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
