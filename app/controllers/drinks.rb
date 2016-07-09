@@ -22,13 +22,13 @@ end
 post '/shops/:shop_id/drinks' do 
 
   @shop = Shop.find(params[:shop_id])
-
-  @drink = @shop.drinks.new(params[:drink])
+  @reviews = Review.where(shop_id: params[:shop_id])
+  @drink = Drink.new(params[:drink])
 
   if @drink.save
     redirect "/shops/#{@shop.id}/drinks/#{@drink.id}"
   else
-    @errors = @review.errors.full_messages
+    @errors = @drink.errors.full_messages
     erb :'drinks/new'
   end
 

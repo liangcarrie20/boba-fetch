@@ -5,8 +5,8 @@
   <%= @reviews.count %> reviews<br>
 <% if current_user %>
   <p>Add a new review for <%= @shop.name %>!</p>
-  <% if @error %>
-  <%= @error %>
+  <% if @errors %>
+  <%= @errors %>
   <% end %>
   <form action='/shops/<%= @shop.id %>/reviews' method='POST'>
    <input type="hidden" name="review[user_id]" value="<%= current_user.id %>">

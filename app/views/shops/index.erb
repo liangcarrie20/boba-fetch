@@ -1,7 +1,7 @@
 <div class="container">
   <% @shops.each do |shop| %>
   <ul>
-    <li><a href="/shops/<%=shop.id%>"><%=shop.name%></a></li>
+    <li><a href="/shops/<%=shop.id%>"><%=shop.name%></a> <%=shop.address%> <%=shop.city%>, <%=shop.state%> <%=shop.zip%> </li>
   </ul>
   <% end %>
   <% if current_user %>

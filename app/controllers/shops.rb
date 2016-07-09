@@ -9,6 +9,7 @@ end
 
 post '/shops' do
   @shop = Shop.new(params[:shop])
+  
   if @shop.save
     redirect '/shops'
   else
