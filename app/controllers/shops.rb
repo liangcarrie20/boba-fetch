@@ -1,5 +1,5 @@
 get '/shops' do
-  @shops = Shop.all
+  @shops = Shop.order(:name)
   erb :'/shops/index'
 end
 
