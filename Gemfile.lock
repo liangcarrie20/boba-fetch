@@ -26,12 +26,16 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    database_cleaner (1.5.3)
     diff-lcs (1.2.5)
     dotenv (2.1.1)
     factory_girl (4.7.0)
       activesupport (>= 3.0.0)
     faker (1.6.5)
       i18n (~> 0.5)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     json (1.8.3)
     mime-types (3.1)
@@ -40,12 +44,13 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    multi_xml (0.5.5)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     pg (0.18.4)
     pkg-config (1.1.7)
-    rack (1.6.4)
+    rack (1.5.5)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -94,10 +99,13 @@ DEPENDENCIES
   activesupport (~> 4.2.0)
   bcrypt
   capybara
+  database_cleaner
   dotenv
   factory_girl
   faker
+  httparty
   pg
+  rack (~> 1.5.2)
   rack-test
   rake
   rspec (~> 3.0)
