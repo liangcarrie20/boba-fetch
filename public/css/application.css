@@ -1,3 +1,15 @@
+.index-review {
+  border: 1px dotted black;
+}
+
+.shop-name {
+  font-weight: bold;
+}
+
+.drink-name {
+  font-style: italic;
+}
+
 #site-name {
   font-family: 'Lobster', cursive;
   font-size: 4.5em;
