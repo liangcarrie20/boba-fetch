@@ -1,4 +1,10 @@
 <div class="container">
+<div class="shop-info">
+  <%= @shop.name %><br>
+  <%= @shop.address %><br>
+  <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
+  <%= @reviews.count %> reviews<br>
+</div>
   <% @reviews.each do |review| %>
   <% @shop_id = review.shop_id %>
   <% @shop_name = Shop.find(@shop_id).name %>
@@ -13,4 +19,10 @@
     <div class="reviewer">by: <a href="/users/<%=@user_id%>"><%= @user_username %></a></div>
   </div>
   <% end %>
+  <div class="container">
+    <ul>
+      <li><a href="/shops/<%= @shop.id %>/drinks/new">Add a drink for <%= @shop.name %></a></li>
+      <li><a href="/shops/<%= @shop.id %>/reviews/new">Add a review for <%= @shop.name %></a></li>
+    </ul>
+  </div>
 </div>
