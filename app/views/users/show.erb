@@ -2,8 +2,21 @@
   <% if current_user %>
 
   <div class="profile-welcome">Welcome, <%= @user.first_name %>!</div>
-  <p>PROFILE PAGE HERE</p>
+  <% @reviews.each do |review| %>
+  <% @shop_id = review.shop_id %>
+  <% @shop_name = Shop.find(@shop_id).name %>
+  <% @drink_id = review.drink_id %>
+  <% @drink_name = Drink.find(@drink_id).name %>
+  <div class="index-review">
+    <div class="shop-name"><%= @shop_name %></div>
+    <div class="drink-name"><%=@drink_name.capitalize %></div>
+    <div class="drink-rating"> <%= review.rating %> stars</div>
+    <div class="review-body"><%= review.body %></div>
+    <div class="edit-link"><a href="#">Edit</div>
+    <div class="delete-link"><a href="#">Delete</div>
+  </div>
+  <% end %>
   <% else %>
-  <p>You've encountered an error.</p>
+  <p>You've encountered an error. Please login and try again.</p>
   <% end %>
 </div>
