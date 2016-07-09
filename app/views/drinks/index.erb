@@ -1,0 +1,7 @@
+<div class="container">
+  <% @drinks.each do |drink| %>
+  <ul>
+    <li><a href="/shops/<%=drink.id%>"><%=drink.name%></a></li>
+  </ul>
+  <% end %>
+</div>
