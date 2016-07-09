@@ -6,9 +6,11 @@ class Shop < ActiveRecord::Base
   validates :zip, presence: true
   validates_length_of :zip, :is => 5
 
-  before_save { |shop| shop.name = shop.name.split.map(&:capitalize).join(' ') }
-  before_save { |shop| shop.address = shop.address.split.map(&:capitalize).join(' ') }
-  before_save { |shop| shop.city = shop.city.split.map(&:capitalize).join(' ') }
+  before_save do
+    self.name = self.name.split.map(&:capitalize).join(' ')
+    self.address = self.address.split.map(&:capitalize).join(' ')
+    self.city = self.city.split.map(&:capitalize).join(' ')
+  end
 
   has_many :reviews
   has_many :drinks

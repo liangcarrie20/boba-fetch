@@ -5,5 +5,7 @@ class Drink < ActiveRecord::Base
   validates :name, uniqueness: {scope: :shop_id}
   validates :shop_id, presence: true
 
-  before_save { |drink| drink.name = drink.name.downcase }
+  before_save do
+    self.name = self.name.downcase
+  end
 end
