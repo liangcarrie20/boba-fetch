@@ -4,4 +4,7 @@
     <li><a href="/shops/<%=shop.id%>"><%=shop.name%></a></li>
   </ul>
   <% end %>
+  <% if current_user %>
+  <a href="/shops/new">Add a new shop</a>
+  <% end %>
 </div>
