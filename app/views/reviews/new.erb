@@ -3,7 +3,7 @@
   <%= @shop.address %><br>
   <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
   <%= @reviews.count %> reviews<br>
-
+<% if current_user %>
   <p>Add a new review for <%= @shop.name %>!</p>
   <% if @error %>
   <%= @error %>
@@ -35,5 +35,8 @@
 </form>
   <p>OR</p>
   <p><a href="/shops/<%= @shop.id %>/drinks/new">Add a new drink</a></p>
+  <% else %>
+<p>You've encountered an error. Please login and try again.</p>
+<% end %>
 </div>
 

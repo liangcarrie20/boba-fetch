@@ -18,7 +18,7 @@ post '/users' do
 end
 
 get '/users/:id' do
-  @user = current_user
+  @user = User.find(params[:id])
   @reviews = Review.where(user_id: params[:id])
   erb :"/users/show"
 end

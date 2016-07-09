@@ -1,5 +1,6 @@
 <div class="container">
   <% if current_user %>
+  <% if current_user.id == @user.id %>
 
   <div class="profile-welcome">Welcome, <%= @user.first_name %>!</div>
   <% @reviews.each do |review| %>
@@ -15,6 +16,7 @@
     <div class="edit-link"><a href="#">Edit</a></div>
     <div class="delete-link"><a href="#">Delete</a></div>
   </div>
+  <% end %>
   <% end %>
   <% else %>
   <p>You've encountered an error. Please login and try again.</p>

@@ -1,4 +1,5 @@
 <div class="container">
+  <% if current_user %>
   <%= @shop.name %><br>
   <%= @shop.address %><br>
   <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
@@ -11,12 +12,14 @@
   <form action='/shops/<%= @shop.id %>/drinks' method='POST'>
    <input type="hidden" name="drink[shop_id]" value="<%= @shop.id %>">
 
-  <fieldset>
+   <fieldset>
     <label for="name">Drink name:</label>
     <input type="text" name="drink[name]" placeholder="Drink name">
   </fieldset>
 
   <button type="submit">Submit</button>
 </form>
+<% else %>
+<p>You've encountered an error. Please login and try again.</p>
+<% end %>
 </div>
-
