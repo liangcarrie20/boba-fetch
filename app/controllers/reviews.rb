@@ -1,3 +1,11 @@
+# Show all reviews for specific shop
+get '/shops/:shop_id/reviews' do 
+  @shop = Shop.find(params[:shop_id])
+  @reviews = @shop.reviews
+
+  erb :'reviews/index'
+end
+
 # Show form for creating a new review
 get '/shops/:id/reviews/new' do
   @shop = Shop.find(params[:id])
