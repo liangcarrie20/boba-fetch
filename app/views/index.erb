@@ -14,6 +14,7 @@
     <div class="drink-rating"> <%= review.rating %> stars</div>
     <div class="review-body"><%= review.body %></div>
     <div class="reviewer">by: <a href="/users/<%=@user_id%>"><%= @user_username %></a></div>
+    <div class="timestamp">on: <%= review.updated_at %></div>
   </div>
   <% end %>
 </div>

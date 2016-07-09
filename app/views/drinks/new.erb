@@ -1,11 +1,9 @@
-<div class="shop-info">
+<div class="container">
   <%= @shop.name %><br>
   <%= @shop.address %><br>
   <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
   <%= @reviews.count %> reviews<br>
-</div>
 
-<div class="container">
   <p>Add a new drink for <%= @shop.name %>!</p>
   <% if @error %>
   <%= @error %>

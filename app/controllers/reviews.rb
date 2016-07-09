@@ -9,7 +9,7 @@ end
 # Show form for creating a new review
 get '/shops/:shop_id/reviews/new' do
   @reviews = Review.where(shop_id: params[:shop_id])
-  @drinks = Drink.where(shop_id: params[:shop_id])
+  @drinks = Drink.where(shop_id: params[:shop_id]).order(:name)
   @shop = Shop.find(params[:shop_id])
     erb :'reviews/new'
 end
@@ -17,7 +17,7 @@ end
 # Submit form and create a new review
 post '/shops/:shop_id/reviews' do
   @shop = Shop.find(params[:shop_id])
-  @drinks = Drink.where(shop_id: params[:shop_id])
+  # @drinks = Drink.where(shop_id: params[:shop_id])
   @review = Review.new(params[:review])
 
   if @review.save

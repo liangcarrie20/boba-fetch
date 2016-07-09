@@ -19,7 +19,7 @@ end
 
 get '/shops/:id' do
   @shop = Shop.find(params[:id])
-  @reviews = Review.where(shop_id: params[:id])
+  @reviews = Review.where(shop_id: params[:id]).order(updated_at: :desc)
   erb :'/shops/show'
 end
 
