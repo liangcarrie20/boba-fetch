@@ -2,7 +2,7 @@
 <div class="container">
     <%= @shop.name %>: <%= @reviews.count %> reviews<br>
   <div id="address">
-    <%= @shop.address %><br>
+    <%= @shop.address %>
     <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>
   </div>
   <% @reviews.each do |review| %>
@@ -14,15 +14,15 @@
   <% @user_username = User.find(@user_id).username %>
   <p>Reviews:</p>
   <div class="index-review">
-    <div class="timestamp">on: <%= review.updated_at %></div>
     <div class="reviewer"><a href="/users/<%=@user_id%>"><%= @user_username %></a> says:</div>
-    <div class="drink-name"><%=@drink_name.capitalize %> is worth <%= review.rating %> stars!</div>
+    <div class="drink-name"><a href="/shops/<%= @shop_id %>/drinks/<%= @drink_id%>"><%=@drink_name.capitalize %></a> is worth <%= review.rating %> stars!</div>
     <div class="review-body"><%= review.body %></div>
+    <div class="timestamp"><%= review.updated_at.month %>/<%= review.updated_at.day %>/<%= review.updated_at.year %></div>
   </div>
   <% end %>
   <% if current_user %>
-    <a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a></li>
-      <a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a></li>
+    <a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a>
+    <a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a>
 </div>
 <% else %>
 <div class="container">

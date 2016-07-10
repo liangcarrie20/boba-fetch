@@ -2,9 +2,9 @@ img {
   float: left;
 }
 
-html, body, #map {
+#map {
   height: 20em;
-  width: 20em;
+  width: 80%;
   margin: auto;
 }
 
