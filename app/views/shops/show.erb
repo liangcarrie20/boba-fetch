@@ -1,9 +1,12 @@
-<div id="map"></div>
 <div class="container">
-    <%= @shop.name %>: <%= @reviews.count %> reviews<br>
-  <div id="address">
-    <%= @shop.address %>
-    <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>
+<div id="floating-panel">
+  <input id="address" type="textbox" value="<%= @shop.address %> <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>">
+  <input id="submit" type="button" value="Show me where!">
+</div>
+<div id="map"></div>
+  <%= @shop.name %>: <%= @reviews.count %> reviews<br>
+  <div>
+    <%= @shop.address %> <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>
   </div>
   <% @reviews.each do |review| %>
   <% @shop_id = review.shop_id %>
@@ -21,8 +24,8 @@
   </div>
   <% end %>
   <% if current_user %>
-    <a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a>
-    <a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a>
+  <a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a>
+  <a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a>
 </div>
 <% else %>
 <div class="container">
