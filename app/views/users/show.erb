@@ -12,8 +12,11 @@
           <div class="drink-name"><%=@drink_name.capitalize %></div>
           <div class="drink-rating"> <%= review.rating %> stars</div>
           <div class="review-body"><%= review.body %></div>
-          <div class="edit-link"><a href="#">Edit</a></div>
-          <div class="delete-link"><a href="#">Delete</a></div>
+          <div class="edit-link"><a href="/shops/<%= @shop_id %>/reviews/<%=review.id%>/edit">Edit</a></div>
+  <form id="delete-rev" method="POST" action="/shop/<%= @shop_id %>/reviews/<%=review.id%>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Review">
+  </form>
         </div>
       <% end %>
   <% elsif current_user.id != @user.id %>

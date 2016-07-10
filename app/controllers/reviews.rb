@@ -28,32 +28,42 @@ post '/shops/:shop_id/reviews' do
   end
 end
 
-# # Show form to edit review
-# get '/shops/:id/reviews/:review_id/edit' do
-#   @review = Review.find(params[:id])
-#   erb :'reviews/edit'
+# display a specific review belonging to a specific shop
+get '/shops/:shop_id/reviews/:id' do 
+  @shop = Shop.find(params[:shop_id])
+  @review = @shop.reviews.find(params[:id])
 
-# end
+  erb :'reviews/show'
 
-# # Submit form to edit review
-# put '/shops/:id/reviews/:shop_id' do
-#   @shop = Shop.find(params[:id])
-#   @review = @shop.reviews.find(params[:shop_id])
+end
 
-#   if @review.update_attributes(content: params[:content])
-#     redirect "/shops/#{@shop.id}"
-#   else
-#     @errors = @review.errors.full_messages
-#     erb :'reviews/edit'
-#   end
-# end
+# Show form to edit review
+get '/shops/:id/reviews/:review_id/edit' do
+  @drinks = Drink.where(shop_id: params[:id]).order(:name)
+  @shop = Shop.find(params[:id])
+  @review = Review.find(params[:review_id])
+  erb :'reviews/edit'
+end
 
-# # Delete review
-# delete '/shop/:id/reviews/:shop_id' do
-#   @shop = Shop.find(params[:id])
-#   @review = @shop.reviews.find(params[:shop_id])
+# Submit form to edit review
+put '/shops/:shop_id/reviews/:id' do
+  @shop = Shop.find(params[:shop_id])
+  @review = Review.find(params[:id])
 
-#   @review.destroy
+  if @review.update_attributes(params[:review])
+    redirect "/shops/#{@shop.id}"
+  else
+    @errors = @review.errors.full_messages
+    erb :'reviews/edit'
+  end
+end
 
-#   redirect "/shop/#{@shop.id}"
-# end
+# Delete review
+delete '/shop/:shop_id/reviews/:id' do
+  @shop = Shop.find(params[:shop_id])
+  @review = Review.find(params[:id])
+
+  @review.destroy
+
+  redirect "/users/#{current_user.id}"
+end

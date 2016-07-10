@@ -26,11 +26,11 @@
     <option value="2">2 stars</option>
     <option value="1">1 stars</option>
   </select><br>
-  Body: <input id="review-box" type="text" name="review[body]" placeholder="Review goes here...">
+  Body: <textarea id="review-box" name="review[body]" placeholder="Review goes here..."></textarea>
   </fieldset>
 
   <button type="submit">Submit</button>
-</form>
+  </form>
   <p>OR</p>
   <p><a href="/shops/<%= @shop.id %>/drinks/new">Add a new drink</a></p>
   <% else %>

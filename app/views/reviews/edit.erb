@@ -1,3 +1,41 @@
 <div class="container">
-<p>edit form here</p>
+  <%= @shop.name %><br>
+  <%= @shop.address %><br>
+  <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
+  <% if current_user.id == @review.user_id %>
+  <div class="errors">
+    <% if @errors %>
+      <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <form action='/shops/<%= @shop.id %>/reviews/<%= @review.id %>' method='POST'>
+   <input type="hidden" name="_method" value="PUT">
+   <input type="hidden" name="review[user_id]" value="<%= current_user.id %>">
+   <input type="hidden" name="review[shop_id]" value="<%= @shop.id %>">
+
+  <fieldset>
+  <legend>Edit your review for <%= @shop.name %>!</legend>
+   Drink: <select name="review[drink_id]">
+    <% @drinks.each do |drink| %>
+    <option value="<%= drink.id%>"><%= drink.name %></option>
+    <% end %>
+  </select><br>
+
+  Rating: <select name="review[rating]">
+    <option value="5">5 stars</option>
+    <option value="4">4 stars</option>
+    <option value="3">3 stars</option>
+    <option value="2">2 stars</option>
+    <option value="1">1 stars</option>
+  </select><br>
+  Body: <textarea id="review-box" name="review[body]" value="<%= @review.try(:body) %>"></textarea>
+  </fieldset>
+
+  <button type="submit">Submit</button>
+  </form>
 </div>
+<% end %>
