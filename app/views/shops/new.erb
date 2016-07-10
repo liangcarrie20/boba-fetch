@@ -1,23 +1,15 @@
 <div class="container">
   <% if current_user %>
-  
-  <p>Add a new shop on Boba Fetch!</p>
   <% if @errors %>
   <%= @errors %>
   <% end %>
   <form action='/shops' method='POST'>
-
-    <label>Business Name:</label><br>
-    <input type="text" name="shop[name]" placeholder="Shop name">
-
-    <label>Address:</label><br>
-    <input type="text" name="shop[address]" placeholder="Address">
-
-    <label>City:</label><br>
-    <input type="text" name="shop[city]" placeholder="City">
-
-    <label>State:</label><br>
-    <select name="shop[state]">
+    <fieldset>
+      <legend>Add a new shop on Boba Fetch!</legend>
+      Name: <input type="text" name="shop[name]" placeholder="Shop name"><br>
+      Address: <input type="text" name="shop[address]" placeholder="Address"><br>
+      City: <input type="text" name="shop[city]" placeholder="City"><br>
+      State: <select name="shop[state]">
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
       <option value="AZ">Arizona</option>
@@ -69,12 +61,10 @@
       <option value="WV">West Virginia</option>
       <option value="WI">Wisconsin</option>
       <option value="WY">Wyoming</option>
-    </select>
-
-    <label>Zip:</label><br>
-    <input type="text" name="shop[zip]" placeholder="Zip">
-
-  <button type="submit">Submit</button>
+    </select><br>
+    Zip: <input type="text" name="shop[zip]" placeholder="Zip"><br>
+    <button type="submit">Submit</button>
+  </fieldset>
 </form>
 </div>
 <% else %>
