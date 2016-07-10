@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><%= @shop.name %>'s <%= @drink.name %> has <%= @reviews.count %> reviews:</h1>
+  <h1><%= @shop.name %>'s <%= @drink.name %> has an average rating of <%=@reviews.average("rating") %> with <%= @reviews.count %> reviews:</h1>
 
   <% @reviews.each do |review| %>
   <% @user_id = review.user_id %>
