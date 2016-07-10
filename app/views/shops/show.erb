@@ -1,9 +1,9 @@
 <div id="map"></div>
 <div class="container">
     <%= @shop.name %>: <%= @reviews.count %> reviews<br>
-  <div class="shop-info">
+  <div id="address">
     <%= @shop.address %><br>
-    <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
+    <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>
   </div>
   <% @reviews.each do |review| %>
   <% @shop_id = review.shop_id %>
