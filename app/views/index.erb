@@ -1,5 +1,4 @@
 <div class="container">
-  <h1>Boba Fetch is currently under construction.</h1>
   <div>Recent Reviews:</div>
   <% @reviews.each do |review| %>
   <% @shop_id = review.shop_id %>
@@ -14,7 +13,7 @@
     <div class="drink-rating"> <%= review.rating %> stars</div>
     <div class="review-body"><%= review.body %></div>
     <div class="reviewer">by: <a href="/users/<%=@user_id%>"><%= @user_username %></a></div>
-    <div class="timestamp">on: <%= review.updated_at %></div>
+    <div class="timestamp"><%= review.updated_at.month %>/<%= review.updated_at.day %>/<%= review.updated_at.year %></div>
   </div>
   <% end %>
 </div>
