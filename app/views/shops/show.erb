@@ -5,6 +5,7 @@
 </div>
 <div id="map"></div>
   <%= @shop.name %>: <%= @reviews.count %> reviews<br>
+  <p>Average rating: <%=@reviews.average("rating") %></p><br>
   <div>
     <%= @shop.address %> <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>
   </div>
