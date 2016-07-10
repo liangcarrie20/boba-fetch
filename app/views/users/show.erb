@@ -8,7 +8,7 @@
       <% @drink_id = review.drink_id %>
       <% @drink_name = Drink.find(@drink_id).name %>
         <div class="index-review">
-          <div class="shop-name"><%= @shop_name %></div>
+          <div class="shop-name"><a href="/shops/<%=@shop_id%>"><%= @shop_name %></a></div>
           <div class="drink-name"><%=@drink_name.capitalize %></div>
           <div class="drink-rating"> <%= review.rating %> stars</div>
           <div class="review-body"><%= review.body %></div>
