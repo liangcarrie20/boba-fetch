@@ -12,19 +12,16 @@ gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
 
 gem 'rake'
-gem 'httparty'
 
-gem 'rack', '~>1.5.2'
 gem 'shotgun'
 gem 'bcrypt'
+gem 'dotenv'
 
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
   gem 'rspec', '~>3.0'
   gem 'capybara'
-  gem 'database_cleaner'
-  gem 'dotenv'
 end
 
 group :test, :development do
