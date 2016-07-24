@@ -1,4 +1,15 @@
 <div class="container">
+<div>
+<% if current_user %>
+<ul>
+  <li><a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a></li>
+  <li><a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a></li>
+  <li><a href="/shops/<%= @shop.id %>/drinks">View all drinks that <%=@shop.name%> has</a></li>
+  </ul>
+<% else %>
+  <p>Log in to add shops, drinks, and reviews!</p>
+  <% end %>
+</div>
 <div id="floating-panel">
   <input id="address" type="textbox" value="<%= @shop.address %> <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>">
   <input id="submit" type="button" value="Show me where!">
@@ -23,13 +34,5 @@
     <div class="review-body"><%= review.body %></div>
     <div class="timestamp"><%= review.updated_at.month %>/<%= review.updated_at.day %>/<%= review.updated_at.year %></div>
   </div>
-  <% end %>
-  <% if current_user %>
-  <a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a>
-  <a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a>
-</div>
-<% else %>
-<div class="container">
-  <p>Log in to add shops, drinks, and reviews!</p>
   <% end %>
 </div>
