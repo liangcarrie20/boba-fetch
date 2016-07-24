@@ -23,6 +23,8 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 require 'bcrypt'
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -47,3 +49,15 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+# Configure CarrierWave
+CarrierWave.configure do |config|
+  config.fog_provider = 'fog/aws'
+  config.fog_credentials = {
+    provider:              'AWS',
+    aws_access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+    aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+    region:                ENV['AWS_REGION']
+
+  config.fog_directory  = 'name_of_directory'
+end
