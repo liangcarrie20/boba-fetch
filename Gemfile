@@ -17,6 +17,8 @@ gem 'shotgun'
 gem 'bcrypt'
 gem 'dotenv'
 gem 'geocoder'
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 
 group :test do
   gem 'shoulda-matchers'
