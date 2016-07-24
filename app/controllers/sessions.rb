@@ -3,19 +3,18 @@ get '/sessions/new' do
 end
 
 post "/sessions" do
-  @user = User.find_by(username: params[:user][:username].downcase)
+  @user = User.authenticate(params[:user])
 
-  if @user && @user.authenticate(params[:user][:password])
-    session[:user_id] = @user.id
-    redirect "/users/#{session[:user_id]}"
+  if @user
+    login(@user)
+    redirect "/users/#{current_user.id}"
   else
     @error = "Your email and or password was incorrect."
     redirect '/sessions/new'
   end
 end
 
-get "/sessions/delete" do
-  session[:user_id] = nil
-  current_user = nil
+get "/logout" do
+  logout
   redirect "/"
 end
