@@ -1,4 +1,8 @@
 <div class="container">
+  <h1>Drinks at <%=@shop.name%></h1>
+  <form action="/shops/<%=@shop.id%>/drinks" method="post">
+    <input type="submit" value="Add a new drink to <%=@shop.name%>">
+  </form>
   <% @drinks.each do |drink| %>
   <ul>
     <li><a href="/shops/<%=drink.id%>"><%=drink.name%></a></li>
