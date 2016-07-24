@@ -14,15 +14,15 @@
 <body>
   <div class="container">
       <header>
-        <div id="site-name"><img src="/boba-fetch-1.png" alt="site-logo"/>Boba Fetch
+        <div id="site-name"><img src="/boba-fetch-1-Colors-Updated.png" alt="site-logo"/>Boba Fetch
         </div>
         <nav>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/shops">Shops</a></li>
             <% if current_user %>
-            <li><a href="/users/<%= @current_user.id %>">Profile</a></li>
-            <li><a href="/sessions/delete">Logout</a></li>
+            <li><a href="/users/<%=current_user.id%>">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
             <% else %>
             <li><a href="/users/new">Register</a></li>
             <li><a href="/sessions/new">Login</a></li>

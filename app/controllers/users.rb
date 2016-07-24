@@ -1,19 +1,15 @@
-get '/users' do
-  erb :"users/show"
-end
-
 get '/users/new' do
-  erb :'users/new'
+  erb :'/users/new'
 end
 
 post '/users' do
   @user = User.new(params[:user])
-
   if @user.save
-    redirect "/sessions/new"
+    login(@user)
+    redirect "/users/#{current_user.id}"
   else
     @error = @user.errors.full_messages
-    erb :"/users/new"
+    redirect '/users/new' 
   end
 end
 
