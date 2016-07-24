@@ -2,6 +2,10 @@ img {
   float: left;
 }
 
+.site-welcome {
+  width: 30%;
+}
+
 #map {
   height: 20em;
   width: 80%;
@@ -15,6 +19,8 @@ img {
 
 .index-review {
   border: 1px dotted black;
+  width: 70%;
+  float: right;
 }
 
 .drink-name {
