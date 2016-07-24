@@ -44,6 +44,15 @@ get '/shops/:shop_id/drinks/:id' do
 
 end
 
+post '/shops/:shop_id/drinks/:drink_id/upload' do
+  @drink = Drink.find(params[:drink_id])
+  @uploaded_file = @drink.uploads.create(filepath: params[:upload])
+  @drink.save!
+
+  @uploaded_file.to_s
+
+end
+
 # # returns a form for editing drink belonging to a specific shop
 # get '/shops/:shop_id/drinks/:id/edit' do
 
