@@ -1,4 +1,5 @@
 <div class="container">
+  <a href="/shops/<%=@shop.id%>/drinks/<%=@drink.id%>/upload">Upload a pic of this drink!</a>
   <h1><%= @shop.name %>'s <%= @drink.name %> has an average rating of <%=@reviews.average("rating") %> with <%= @reviews.count %> reviews:</h1>
 
   <h2>Upload a pic!</h2>
