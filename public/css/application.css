@@ -12,8 +12,12 @@ img {
 
 #map {
     height: 20em;
-    width: 80%;
+    width: 100%;
     margin: auto;
+}
+
+.google-maps {
+    float: right;
 }
 
 #site-name {
