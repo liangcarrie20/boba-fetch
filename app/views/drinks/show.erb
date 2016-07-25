@@ -1,12 +1,6 @@
 <div class="container">
-  <a href="/shops/<%=@shop.id%>/drinks/<%=@drink.id%>/upload">Upload a pic of this drink!</a>
+  <a href="/shops/<%=@shop.id%>/drinks/<%=@drink.id%>/upload">Upload a pic of the <%=@drink.name%>!</a>
   <h1><%= @shop.name %>'s <%= @drink.name %> has an average rating of <%=@reviews.average("rating") %> with <%= @reviews.count %> reviews:</h1>
-
-  <h2>Upload a pic!</h2>
-  <form action="/shops/<%=@shop.id%>/drinks/<%=@drink.id%>/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="upload">
-    <input type="submit" value="Upload!">
-  </form>
 
   <% @reviews.each do |review| %>
   <% @user_id = review.user_id %>
@@ -21,7 +15,7 @@
   </div>
   <% end %>
   <div class="links">
-    <a href="/shops/<%=@shop.id%>">back to <%=@shop.name%></a><br>
-    <a href="/shops/<%=@shop.id%>/reviews/new">add a review for <%=@drink.name%></a>
+    <a href="/shops/<%=@shop.id%>/reviews/new">Write a review for <%=@drink.name%></a><br>
+    <a href="/shops/<%=@shop.id%>">back to <%=@shop.name%></a>
   </div>
 </div>
