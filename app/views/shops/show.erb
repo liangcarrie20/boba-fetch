@@ -1,24 +1,27 @@
 <div class="container">
-<div>
-<% if current_user %>
-<ul>
-  <li><a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a></li>
-  <li><a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a></li>
-  <li><a href="/shops/<%= @shop.id %>/drinks">View all drinks that <%=@shop.name%> has</a></li>
-  </ul>
-<% else %>
-  <p>Log in to add shops, drinks, and reviews!</p>
-  <% end %>
-</div>
-<div id="floating-panel">
-  <input id="address" type="textbox" value="<%= @shop.address %> <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>">
-  <input id="submit" type="button" value="Show me where!">
-</div>
-<div id="map"></div>
+  <div class="google-maps">
+    <p>Need help finding <%=@shop.name%>?</p>
+    <div id="floating-panel">
+      <input id="address" type="textbox" value="<%= @shop.address %> <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>">
+      <input id="submit" type="button" value="Show me where!">
+    </div>
+    <div id="map"></div>
+  </div>
   <%= @shop.name %>: <%= @reviews.count %> reviews<br>
   <p>Average rating: <%=@reviews.average("rating") %></p><br>
   <div>
     <%= @shop.address %> <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>
+    <div>
+      <% if current_user %>
+      <ul>
+        <li><a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a></li>
+        <li><a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a></li>
+        <li><a href="/shops/<%= @shop.id %>/drinks">View all drinks that <%=@shop.name%> has</a></li>
+      </ul>
+      <% else %>
+      <p>Log in to add shops, drinks, and reviews!</p>
+      <% end %>
+    </div>
   </div>
   <p>Reviews:</p>
   <% @reviews.each do |review| %>
