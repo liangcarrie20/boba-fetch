@@ -2,9 +2,9 @@
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::StarWars.character, email: Faker::Internet.email, password: '123')
 end
 
-# 30.times do
-#   Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph(5), user_id: (1..20).to_a.sample, drink_id: (1..250).to_a.sample)
-# end
+30.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph(5), user_id: (1..20).to_a.sample, drink_id: (1..250).to_a.sample)
+end
 
 Shop.create(name: "BAMBU", address: "6050 Geary Blvd.", city: "San Francisco", state: "CA", zip: 94121)
 Shop.create(name: "BB Tea Station", address: "1314 Noriega St.", city: "San Francisco", state: "CA", zip: 94122)
