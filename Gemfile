@@ -18,6 +18,7 @@ gem 'bcrypt'
 gem 'dotenv'
 gem 'geocoder'
 gem 'carrierwave'
+# gem 'rmagick'
 gem 'fog-aws'
 gem 'aws-sdk', '~> 2.3'
 
