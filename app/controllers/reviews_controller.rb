@@ -11,7 +11,12 @@ get '/shops/:shop_id/reviews/new' do
   @reviews = Review.where(shop_id: params[:shop_id])
   @drinks = Drink.where(shop_id: params[:shop_id]).order(:name)
   @shop = Shop.find(params[:shop_id])
+
+  if request.xhr?
+    erb :'reviews/_new', layout: false
+  else
     erb :'reviews/new'
+  end
 end
 
 # Submit form and create a new review
@@ -20,11 +25,19 @@ post '/shops/:shop_id/reviews' do
   # @drinks = Drink.where(shop_id: params[:shop_id])
   @review = Review.new(params[:review])
 
-  if @review.save
-    redirect "/shops/#{@shop.id}"
+  if request.xhr?
+    if @review.save
+      erb :'reviews/_show', layout: false
+    else
+      "Error, please try again"
+    end
   else
-    @errors = @review.errors.full_messages
-    erb :'reviews/new'
+    if @review.save
+      redirect "/shops/#{@shop.id}"
+    else
+      @errors = @review.errors.full_messages
+      erb :'reviews/new'
+    end
   end
 end
 

@@ -11,31 +11,32 @@
   <p>Average rating: <%=@reviews.average("rating") %></p><br>
   <div>
     <%= @shop.address %> <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>
-    <div>
-      <% if current_user %>
-      <ul>
-        <li><a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a></li>
-        <li><a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a></li>
-        <li><a href="/shops/<%= @shop.id %>/drinks"><%=@shop.name%> currently has <%=@drinks.count%> drinks.</a></li>
-      </ul>
-      <% else %>
-      <p>Log in to add shops, drinks, and reviews!</p>
-      <% end %>
-    </div>
+  </div><br>
+  <div>
+    <% if current_user %>
+    <div id="add-drink"><a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a></div>
+    <div id="add-review"><a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a></div>
+    <div id="view-drinks"><a href="/shops/<%= @shop.id %>/drinks">View <%=@shop.name%>'s drinks</a></div>
+    <div id="drink-list"></div>
+    <% else %>
+    <p>Log in to add shops, drinks, and reviews!</p>
+    <% end %>
   </div>
   <p>Reviews:</p>
-  <% @reviews.each do |review| %>
-  <% @shop_id = review.shop_id %>
-  <% @shop_name = Shop.find(@shop_id).name %>
-  <% @drink_id = review.drink_id %>
-  <% @drink_name = Drink.find(@drink_id).name %>
-  <% @user_id = review.user_id %>
-  <% @user_username = User.find(@user_id).username %>
-  <div class="index-review">
-    <div class="reviewer"><a href="/users/<%=@user_id%>"><%= @user_username %></a> says:</div>
-    <div class="drink-name"><a href="/shops/<%= @shop_id %>/drinks/<%= @drink_id%>"><%=@drink_name.capitalize %></a> is worth <%= review.rating %> stars!</div>
-    <div class="review-body"><%= review.body %></div>
-    <div class="timestamp"><%= review.updated_at.month %>/<%= review.updated_at.day %>/<%= review.updated_at.year %></div>
+  <div class="review-list">
+    <% @reviews.each do |review| %>
+    <% @shop_id = review.shop_id %>
+    <% @shop_name = Shop.find(@shop_id).name %>
+    <% @drink_id = review.drink_id %>
+    <% @drink_name = Drink.find(@drink_id).name %>
+    <% @user_id = review.user_id %>
+    <% @user_username = User.find(@user_id).username %>
+    <div class="index-review">
+      <div class="reviewer"><a href="/users/<%=@user_id%>"><%= @user_username %></a> says:</div>
+      <div class="drink-name"><a href="/shops/<%= @shop_id %>/drinks/<%= @drink_id%>"><%=@drink_name.capitalize %></a> is worth <%= review.rating %> stars!</div>
+      <div class="review-body"><%= review.body %></div>
+      <div class="timestamp"><%= review.updated_at.month %>/<%= review.updated_at.day %>/<%= review.updated_at.year %></div>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>

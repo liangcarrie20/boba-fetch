@@ -1,0 +1,18 @@
+ <% if current_user %>
+  <% @shop.name %> <% @shop.address %> <% @shop.city %> <% @shop.state %> <% @shop.zip %>
+
+  <% if @errors %>
+  <%= @errors %>
+  <% end %>
+
+  <form class="add-drink-partial-form" action='/shops/<%= @shop.id %>/drinks' method='POST'>
+  <input type="hidden" name="drink[shop_id]" value="<%= @shop.id %>">
+   <fieldset>
+     <legend>Add a new drink to <%=@shop.name%>!</legend>
+     Drink Name:<input type="text" name="drink[name]" placeholder="Drink name">
+   </fieldset>
+   <button type="submit">Submit</button>
+ </form>
+ <% else %>
+ <p>You've encountered an error. Please login and try again.</p>
+ <% end %>

@@ -5,8 +5,11 @@ get '/shops/:shop_id/drinks' do
   @reviews = Review.where(shop_id: params[:shop_id])
   @drinks = Drink.where(shop_id: params[:shop_id])
 
-  erb :'drinks/index'
-
+  if request.xhr?
+    erb :'drinks/_index', layout: false
+  else
+    erb :'drinks/index'
+  end
 end
 
 # returns a form for creating a new drink belonging to a specific shop
@@ -14,8 +17,11 @@ get '/shops/:shop_id/drinks/new' do
   @reviews = Review.where(shop_id: params[:shop_id])
   @shop = Shop.find(params[:shop_id])
 
-  erb :'drinks/new'
-
+  if request.xhr?
+    erb :'drinks/_new', layout: false
+  else
+    erb :'drinks/new'
+  end
 end
 
 # create a new drink belonging to a specific shop
@@ -25,11 +31,19 @@ post '/shops/:shop_id/drinks' do
   @reviews = Review.where(shop_id: params[:shop_id])
   @drink = Drink.new(params[:drink])
 
-  if @drink.save
-    redirect "/shops/#{@shop.id}/drinks/#{@drink.id}"
+  if request.xhr?
+    if @drink.save
+      "Drink saved"
+    else
+      "Error, please try again."
+    end
   else
-    @errors = @drink.errors.full_messages
-    erb :'drinks/new'
+    if @drink.save
+      redirect "/shops/#{@shop.id}/drinks/#{@drink.id}"
+    else
+      @errors = @drink.errors.full_messages
+      erb :'drinks/new'
+    end
   end
 
 end

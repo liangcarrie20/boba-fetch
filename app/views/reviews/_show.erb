@@ -1,0 +1,6 @@
+  <div class="index-review">
+    <div class="reviewer"><a href="/users/<%=@review.user.id%>"><%= @review.user.username %></a> says:</div>
+    <div class="drink-name"><a href="/shops/<%= @review.shop.id %>/drinks/<%= @review.drink_id%>"><%=@review.drink.name.capitalize %></a> is worth <%= @review.rating %> stars!</div>
+    <div class="review-body"><%= @review.body %></div>
+    <div class="timestamp"><%= @review.updated_at.month %>/<%= @review.updated_at.day %>/<%= @review.updated_at.year %></div>
+  </div>

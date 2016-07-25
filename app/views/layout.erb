@@ -6,32 +6,33 @@
   <link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
   <link rel="stylesheet" href="/css/application.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="/js/ajax.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="/bubbletea.ico" />
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['SECRET_TOKEN'] %>&callback=initMap"></script>
-<title>Boba Fetch</title>
+  <title>Boba Fetch</title>
 </head>
 <body>
   <div class="container">
-      <header>
-        <div id="site-name"><img src="/boba-fetch-1-Colors-Updated.png" alt="site-logo"/>Boba Fetch
-        </div>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/shops">Shops</a></li>
-            <% if current_user %>
-            <li><a href="/users/<%=current_user.id%>">Profile</a></li>
-            <li><a href="/logout">Logout</a></li>
-            <% else %>
-            <li><a href="/users/new">Register</a></li>
-            <li><a href="/sessions/new">Login</a></li>
-            <% end %>
-          </ul>
-        </nav>
-      </header>
-    </div>
-    <%= yield %>
-  </body>
-  </html>
+    <header>
+      <div id="site-name"><img src="/boba-fetch-1-Colors-Updated.png" alt="site-logo"/>Boba Fetch
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/shops">Shops</a></li>
+          <% if current_user %>
+          <li><a href="/users/<%=current_user.id%>">Profile</a></li>
+          <li><a href="/logout">Logout</a></li>
+          <% else %>
+          <li><a href="/users/new">Register</a></li>
+          <li><a href="/sessions/new">Login</a></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <%= yield %>
+</body>
+</html>
