@@ -51,13 +51,13 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 require APP_ROOT.join('config', 'database')
 
 # Configure CarrierWave
-# CarrierWave.configure do |config|
-#   config.fog_provider = 'fog/aws'
-#   config.fog_credentials = {
-#     provider:              'AWS',
-#     aws_access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
-#     aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-#     region:                ENV['AWS_REGION']
-# }
-#   # config.fog_directory  = 'name_of_directory'
-# end
+CarrierWave.configure do |config|
+  # config.fog_provider = 'fog/aws'
+  config.fog_credentials = {
+    provider:              'AWS',
+    aws_access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+    aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+    region:                ENV['AWS_REGION']
+}
+  config.fog_directory  = 'herokubobafetch'
+end
