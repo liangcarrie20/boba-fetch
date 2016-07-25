@@ -44,8 +44,14 @@ get '/shops/:shop_id/drinks/:id' do
 
 end
 
-post '/shops/:shop_id/drinks/:drink_id/upload' do
+get '/shops/:shop_id/drinks/:drink_id/upload' do
+  @uploads = Upload.all
   @drink = Drink.find(params[:drink_id])
+  @shop = Shop.find(params[:shop_id])
+  erb :'/drinks/upload'
+end
+
+post '/shops/:shop_id/drinks/:drink_id/upload' do
   @uploaded_file = @drink.uploads.create(filepath: params[:upload])
   @drink.save!
 
