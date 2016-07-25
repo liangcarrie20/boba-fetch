@@ -21,6 +21,7 @@ end
 get '/shops/:id' do
   @shop = Shop.find(params[:id])
   @reviews = Review.where(shop_id: params[:id]).order(updated_at: :desc)
+  @drinks = Drink.where(shop_id: params[:id])
   erb :'/shops/show'
 end
 
