@@ -58,6 +58,9 @@ img {
     height: 10em;
 }
 
+.drinks-at-shop {
+    display: none;
+}
 
 nav {
     max-width: 100%;
