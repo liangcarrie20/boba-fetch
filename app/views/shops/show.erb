@@ -16,7 +16,7 @@
       <ul>
         <li><a href="/shops/<%= @shop.id %>/drinks/new">Add a drink</a></li>
         <li><a href="/shops/<%= @shop.id %>/reviews/new">Add a review</a></li>
-        <li><a href="/shops/<%= @shop.id %>/drinks">View all drinks that <%=@shop.name%> has</a></li>
+        <li><a href="/shops/<%= @shop.id %>/drinks"><%=@shop.name%> currently has <%=@drinks.count%> drinks.</a></li>
       </ul>
       <% else %>
       <p>Log in to add shops, drinks, and reviews!</p>
