@@ -8,7 +8,7 @@ post '/sessions' do
     login(@user)
     redirect "/users/#{@user.id}"
   else
-    @error = "Your email and or password was incorrect."
+    flash[:error] = "Please re-enter your email and password."
     redirect '/sessions/new'
   end
 end
