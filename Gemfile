@@ -22,6 +22,7 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'aws-sdk', '~> 2.3'
 gem 'faker'
+gem 'sinatra-flash'
 
 group :test do
   gem 'shoulda-matchers'
