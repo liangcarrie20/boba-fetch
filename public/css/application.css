@@ -102,3 +102,12 @@ a:active {
 a:active {
     color: blue;
 }
+
+.flash {
+    font-size: 20px;
+    width: 600px;
+    padding: 5px;
+    font-weight: bold;
+    margin: 20px;
+    color: red;
+}
