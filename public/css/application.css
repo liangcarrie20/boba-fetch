@@ -5,7 +5,6 @@
 img {
     float: left;
 }
-
 .site-welcome {
     width: 30%;
 }
@@ -88,6 +87,18 @@ nav li a {
     text-decoration: none;
 }
 
-nav a:hover {
-    background-color: green;
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
+}
+
+a:active {
+    color: blue;
 }
