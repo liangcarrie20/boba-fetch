@@ -32,7 +32,7 @@
     <option value="2">2 stars</option>
     <option value="1">1 stars</option>
   </select><br>
-  Body: <textarea id="review-box" name="review[body]" value="<%= @review.try(:body) %>"></textarea>
+  Body: <textarea id="review-box" name="review[body]"><%= @review.body %></textarea>
   </fieldset>
 
   <button type="submit">Submit</button>
