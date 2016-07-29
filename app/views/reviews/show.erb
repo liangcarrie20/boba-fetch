@@ -1,11 +1,8 @@
 <div class="container">
   <div class="google-maps">
     <p>Need help finding <%=@shop.name%>?</p>
-    <div id="floating-panel">
       <input id="address" type="textbox" value="<%= @shop.address %> <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %>">
-      <input id="submit" type="button" value="Show me where!">
-    </div>
-    <div id="map"></div>
+  <div id="map"></div>
   </div>
   <div><%=@shop.name%></div>
   <div><%=@shop.address%></div>
