@@ -23,6 +23,7 @@ gem 'fog-aws'
 gem 'aws-sdk', '~> 2.3'
 gem 'faker'
 gem 'sinatra-flash'
+gem 'google_places'
 
 group :test do
   gem 'shoulda-matchers'

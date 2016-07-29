@@ -1,18 +1,21 @@
 * {
     font-family: 'Raleway', arial;
+    box-sizing: border-box;
 }
 
 img {
     float: left;
 }
-.site-welcome {
+#site-welcome {
     width: 30%;
 }
 
 #site-slogan {
     color: red;
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-family: Pacifico;
+    /*overflow: hidden;*/
+    margin-top: -2.5em;
 }
 
 #map {
@@ -26,15 +29,12 @@ img {
     float: right;
 }
 
-#site-name {
-   float: left;
-    clear: both; 
+#login-form {
+    float: right;
 }
 
 .index-review {
     border: 1px dotted black;
-  /*  width: 70%;
-   float: right;*/
 }
 
 .drink-name {
@@ -49,7 +49,7 @@ img {
 #site-name {
     font-family: 'Lobster', cursive;
     font-size: 4.5em;
-    display: center;
+    /*overflow: hidden;*/
 }
 
 .container {
@@ -68,7 +68,7 @@ img {
 }
 
 nav {
-    max-width: 100%;
+    width: 100%;
     font-size: .80em;
     clear: both;
 }
@@ -89,25 +89,18 @@ nav li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 13px 13px;
     text-decoration: none;
+    width: 80%;
 }
 
-a:link {
+a {
     text-decoration: none;
     color: red;
 }
 
 a:hover {
     color: green;
-}
-
-a:active {
-    color: blue;
-}
-
-a:active {
-    color: blue;
 }
 
 .flash {
