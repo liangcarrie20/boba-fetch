@@ -1,5 +1,10 @@
+ @font-face { 
+    font-family: 'Star Jedi';
+    src: url('https://s3.amazonaws.com/herokubobafetch/StarJedi+Special+Edition.ttf') format('truetype');
+ }
+
 * {
-    font-family: 'Raleway', arial
+    font-family: 'Raleway', arial;
 }
 
 img {
@@ -9,9 +14,13 @@ img {
     width: 30%;
 }
 
+.site-slogan {
+    font-family: 'Star Jedi'
+}
+
 #map {
     height: 20em;
-    width: 100%;
+    width: 20em;
     margin: auto;
     clear: both;
 }
@@ -89,10 +98,11 @@ nav li a {
 
 a:link {
     text-decoration: none;
+    color: red;
 }
 
 a:hover {
-    color: red;
+    color: green;
 }
 
 a:active {
