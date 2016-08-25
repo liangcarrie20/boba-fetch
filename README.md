@@ -6,6 +6,7 @@ Five minutes have passed and you are still undecided.
 
 Have no fear, Boba Fetch is here!
 
+### Purpose
 A social media web app of reviews on individual menu items at bubble tea shops.
 
 Users can add shops, drinks, ratings and reviews
