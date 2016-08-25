@@ -35,8 +35,8 @@ post '/shops/:shop_id/reviews' do
     if @review.save
       redirect "/shops/#{@shop.id}"
     else
-      @errors = @review.errors.full_messages
-      erb :'reviews/new'
+      flash[:error] = @review.errors.full_messages
+      redirect 'reviews/new'
     end
   end
 end
@@ -66,8 +66,8 @@ put '/shops/:shop_id/reviews/:id' do
   if @review.update_attributes(params[:review])
     redirect "/shops/#{@shop.id}"
   else
-    @errors = @review.errors.full_messages
-    erb :'reviews/edit'
+    flash[:error] = @review.errors.full_messages
+    redirect 'reviews/edit'
   end
 end
 

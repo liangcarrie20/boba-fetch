@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Create a Boba Fetch Account!</h1>
   <div>
-    <% if @error %>
-    <%= @error %>
+    <% if flash[:error] %>
+    <%= flash[:error] %>
     <% end %>
   </div>
   <div>

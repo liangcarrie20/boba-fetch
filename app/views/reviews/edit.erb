@@ -4,10 +4,10 @@
   <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
   <% if current_user.id == @review.user_id %>
   <div class="errors">
-    <% if @errors %>
+    <% if flash[:error] %>
       <ul>
-      <% @errors.each do |error| %>
-        <li><%= error %></li>
+      <% flash[:error].each do |error| %>
+        <li><%= flas[:error] %></li>
       <% end %>
       </ul>
     <% end %>
@@ -19,20 +19,23 @@
 
   <fieldset>
   <legend>Edit your review for <%= @shop.name %>!</legend>
-   Drink: <select name="review[drink_id]">
+   Drink:
+   <select name="review[drink_id]">
     <% @drinks.each do |drink| %>
     <option value="<%= drink.id%>"><%= drink.name %></option>
     <% end %>
   </select><br>
 
-  Rating: <select name="review[rating]">
+  Rating:
+  <select name="review[rating]">
     <option value="5">5 stars</option>
     <option value="4">4 stars</option>
     <option value="3">3 stars</option>
     <option value="2">2 stars</option>
     <option value="1">1 stars</option>
   </select><br>
-  Body: <textarea id="review-box" name="review[body]"><%= @review.body %></textarea>
+  Body:
+  <textarea id="review-box" name="review[body]"><%= @review.body %></textarea>
   </fieldset>
 
   <button type="submit">Submit</button>

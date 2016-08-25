@@ -5,8 +5,8 @@
   <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
   <%= @reviews.count %> reviews<br>
 
-  <% if @errors %>
-  <%= @errors %>
+  <% if flash[:error] %>
+  <%= flash[:error] %>
   <% end %>
 
   <form action='/shops/<%= @shop.id %>/drinks' method='POST'>

@@ -4,8 +4,8 @@
   <%= @shop.city %>, <%= @shop.state %> <%= @shop.zip %><br>
   <%= @reviews.count %> reviews<br>
   <% if current_user %>
-  <% if @errors %>
-  <%= @errors %>
+  <% if flash[:error] %>
+  <%= flash[:error] %>
   <% end %>
   <form action='/shops/<%= @shop.id %>/reviews' method='POST'>
    <input type="hidden" name="review[user_id]" value="<%= current_user.id %>">
@@ -19,7 +19,7 @@
     <% end %>
   </select><br>
 
-  Rating: <select name="reviewb[rating]">
+  Rating: <select name="reviews[rating]">
     <option value="5">5 stars</option>
     <option value="4">4 stars</option>
     <option value="3">3 stars</option>

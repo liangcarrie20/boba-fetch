@@ -41,7 +41,7 @@ post '/shops/:shop_id/drinks' do
     if @drink.save
       redirect "/shops/#{@shop.id}/drinks/#{@drink.id}"
     else
-      @errors = @drink.errors.full_messages
+      flash[:error] = @drink.errors.full_messages
       erb :'drinks/new'
     end
   end

@@ -13,7 +13,7 @@ post '/shops' do
   if @shop.save
     redirect '/shops'
   else
-    @errors = @shop.errors.full_messages
+    flash[:error] = @shop.errors.full_messages
     redirect '/shops/new'
   end
 end

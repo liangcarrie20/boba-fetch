@@ -1,8 +1,8 @@
   <% if current_user %>
   <% @shop.name %> <% @shop.address %> <% @shop.city %> <% @shop.state %> <% @shop.zip %>
 
-  <% if @errors %>
-  <%= @errors %>
+  <% if flash[:error] %>
+  <%= flash[:error] %>
   <% end %>
 
   <form class="add-review-partial-form" action='/shops/<%= @shop.id %>/reviews' method='POST'>

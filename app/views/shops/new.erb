@@ -1,7 +1,7 @@
 <div class="container">
   <% if current_user %>
-  <% if @errors %>
-  <%= @errors %>
+  <% if flash[:error] %>
+  <%= flash[:error] %>
   <% end %>
   <form action='/shops' method='POST'>
     <fieldset>

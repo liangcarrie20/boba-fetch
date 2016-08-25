@@ -8,7 +8,7 @@ post '/users' do
     login(@user)
     redirect "/users/#{current_user.id}"
   else
-    @error = @user.errors.full_messages
+    flash[:error] = @user.errors.full_messages
     redirect '/users/new' 
   end
 end
