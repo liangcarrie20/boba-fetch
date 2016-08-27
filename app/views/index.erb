@@ -1,20 +1,44 @@
-<div class="container">
-  <h1>Recent Reviews:</h1>
+<!-- <h2 class="cap-letters">Boba Trivia</h2>
+  Boba Bloodline
+  <ul>
+    <li>Grandfather: Journeyman Protector</li>
+    <li>Father: Jango Fett</li>
+    <li>Sister: Aria Fett</li>
+    <li>Wife: Sintas
+    <li>Daughter: Ailyn</li>
+    <li>Son-in-law: Makin Marec</li>
+    <li>Granddaughter: Mirta Gev</li>
+    <li>Grandson-in-law: Ghes Orade
+    <li>Nephew: Venku Skirata</li>
+  </ul> -->
+  <h1 class="cap-letters">Recent reviews</h1>
   <% @reviews.each do |review| %>
-  <% @shop_id = review.shop_id %>
-  <% @shop_name = Shop.find(@shop_id).name %>
-  <% @drink_id = review.drink_id %>
-  <% @drink_name = Drink.find(@drink_id).name %>
-  <% @user_id = review.user_id %>
-  <% @user_username = User.find(@user_id).username %>
-  <div class="index-review">
-    <div class="shop-name"><a href="/shops/<%=@shop_id%>"><%= @shop_name %></div></a>
-    <div class="drink-name"><%=@drink_name.capitalize %></div>
-    <div class="drink-rating"> <%= review.rating %> stars</div>
-    <div class="review-body"><%= review.body %></div>
-    <div class="reviewer">by: <a href="/users/<%=@user_id%>"><%= @user_username %></a></div>
-    <div class="timestamp"><%= review.updated_at.month %>/<%= review.updated_at.day %>/<%= review.updated_at.year %></div>
-  </div>
+  <div class="rev-disp span-3">
+    <% if review.rating == 5 %>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+    <% elsif review.rating == 4 %>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+    <% elsif review.rating == 3 %>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+    <% elsif review.rating == 2 %>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+    <% else %>
+      <i class="fa fa-star"></i>
+    <% end %>
+    <a href="/shops/<%=review.shop_id%>/drinks/<%=review.drink_id%>"><%= review.drink.name %></a> | 
+    <a href="/shops/<%=review.shop_id%>"><%= review.shop.name %></a><br>
+    <%= review.body %><br>
+    <a href="/users/<%=review.user_id%>"><%= review.user.username %></a> | 
+    <%= review.updated_at.year %> <%= review.updated_at.strftime("%B") %> <%= review.updated_at.day %><br><br>
+    </div>
   <% end %>
-</div>
-
