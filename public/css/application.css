@@ -89,6 +89,10 @@ width: 96.66666%;
 }
 
 input {
+    width: 100%;
+}
+
+.delete-button {
  background:none!important;
  color: red;
  border:none; 
@@ -97,6 +101,6 @@ input {
  cursor: pointer;
 }
 
-input:hover {
+.delete-button:hover {
     text-decoration: underline;
 }
