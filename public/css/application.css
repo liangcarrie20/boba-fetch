@@ -64,9 +64,9 @@ a:hover {
 }
 
 .span-1, .span-2, .span-3 {
-float: left;
-margin-right: 3.33333%;
-margin-bottom: 10px;
+    float: left;
+    margin-right: 3.33333%;
+    margin-bottom: 10px;
 }
 
 .span-1 {
@@ -90,6 +90,10 @@ width: 96.66666%;
 
 input {
     width: 100%;
+}
+
+.edit-link {
+    text-align: center;
 }
 
 .delete-button {
