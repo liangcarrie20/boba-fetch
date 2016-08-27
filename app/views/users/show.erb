@@ -1,7 +1,15 @@
 <% if current_user && current_user.id == @user.id %>
+  <h1 class="cap-letters">Welcome back, <%= @user.first_name %> | <%= @user.username %>!</h1>
+  <h2>Your reviews</h2>
 
-<h1 class="cap-letters">Welcome back, <%= @user.first_name %>!</h1>
-<h2>Your reviews</h2>
+<% elsif current_user && current_user.id != @user.id %>
+  <h1 class="cap-letters"><%= @user.username %>'s reviews</h1>
+
+<% else %>
+  You've encountered an error. Please login and try again.
+<% end %>
+
+
   <% @reviews.each do |review| %>
    <% if review.rating == 5 %>
       <i class="star fa fa-star"></i>
@@ -37,33 +45,14 @@
     <a href="/shops/<%=review.shop_id%>/drinks/<%=review.drink_id%>"><%= review.drink.name %></a> | 
     <a href="/shops/<%=review.shop_id%>"><%= review.shop.name %></a> |
     <%= review.updated_at.year %> <%= review.updated_at.strftime("%B") %> <%= review.updated_at.day %><br>
-    <%= review.body %><br>
+    <%= review.body %><br><br><br>
 
-    <a href="/shops/<%= @shop_id %>/reviews/<%=review.id%>/edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
-    <form id="delete-rev" method="POST" action="/shop/<%= @shop_id %>/reviews/<%=review.id%>">
+    <% if current_user && review.user_id == current_user.id %>
+    <a href="/shops/<%= review.shop_id %>/reviews/<%=review.id%>/edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
+    <form id="delete-rev" method="POST" action="/shop/<%= review.shop_id %>/reviews/<%=review.id%>">
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Delete">
     </form>
     <br><br>
 <% end %>
-
-
-<% elsif current_user && current_user.id != @user.id %>
-<%=@user.username.capitalize%>'s profile
-  <% @reviews.each do |review| %>
-    <% @shop_id = review.shop_id %>
-    <% @shop_name = Shop.find(@shop_id).name %>
-    <% @drink_id = review.drink_id %>
-    <% @drink_name = Drink.find(@drink_id).name %>
-      <div class="index-review">
-        <div class="shop-name"><a href="/shops/<%=@shop_id%>"><%= @shop_name %></a></div>
-        <div class="drink-name"><%=@drink_name.capitalize %></div>
-        <div class="drink-rating"> <%= review.rating %> stars</div>
-        <div class="review-body"><%= review.body %></div>
-      </div>
-    <% end %>
-
-
-<% else %>
-  You've encountered an error. Please login and try again.
 <% end %>
