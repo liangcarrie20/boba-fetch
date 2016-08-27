@@ -45,6 +45,10 @@ Drink.create(name: "green apple milk tea", shop_id: 1)
 Drink.create(name: "grass jelly milk tea", shop_id: 1)
 Drink.create(name: "mango lychee smoothie", shop_id: 1)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (1..10).to_a.sample, shop_id: 1)
+end
+
 #2 BB Tea Station
 Drink.create(name: "bubble green tea", shop_id: 2)
 Drink.create(name: "peppermint milk tea", shop_id: 2)
@@ -56,6 +60,10 @@ Drink.create(name: "taro milk tea", shop_id: 2)
 Drink.create(name: "chocolate milk tea", shop_id: 2)
 Drink.create(name: "pomegranate snow ice", shop_id: 2)
 Drink.create(name: "iced milk with caramel and grass jelly boba", shop_id: 2)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (11..20).to_a.sample, shop_id: 2)
+end
 
 #3 Bottle Zup
 Drink.create(name: "green milk tea", shop_id: 3)
@@ -69,6 +77,10 @@ Drink.create(name: "blueberry milk", shop_id: 3)
 Drink.create(name: "thai milk tea", shop_id: 3)
 Drink.create(name: "matcha milk tea", shop_id: 3)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (21..30).to_a.sample, shop_id: 3)
+end
+
 #4 Bubble Tea & Dessert Cafe
 Drink.create(name: "iced milk with bubble", shop_id: 4)
 Drink.create(name: "iced milk with taro bubble", shop_id: 4)
@@ -80,6 +92,10 @@ Drink.create(name: "lychee jelly tea", shop_id: 4)
 Drink.create(name: "genmai cha latte", shop_id: 4)
 Drink.create(name: "iced milk with red bean bubble", shop_id: 4)
 Drink.create(name: "iced milk with pudding bubble", shop_id: 4)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (31..40).to_a.sample, shop_id: 4)
+end
 
 #5 Bubblecup
 Drink.create(name: "green apple tea", shop_id: 5)
@@ -93,6 +109,10 @@ Drink.create(name: "mango tea", shop_id: 5)
 Drink.create(name: "passion fruit tea", shop_id: 5)
 Drink.create(name: "strawberry tea", shop_id: 5)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (41..50).to_a.sample, shop_id: 5)
+end
+
 #6 E Tea
 Drink.create(name: "house milk tea", shop_id: 6)
 Drink.create(name: "hokkaido milk tea", shop_id: 6)
@@ -104,6 +124,10 @@ Drink.create(name: "fresh taro king", shop_id: 6)
 Drink.create(name: "princess rose tea", shop_id: 6)
 Drink.create(name: "black sesame milk tea", shop_id: 6)
 Drink.create(name: "roasted oolong crema", shop_id: 6)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (51..60).to_a.sample, shop_id: 6)
+end
 
 #7 Eggettes
 Drink.create(name: "honey green tea", shop_id: 7)
@@ -117,6 +141,10 @@ Drink.create(name: "passion green tea", shop_id: 7)
 Drink.create(name: "mango green tea", shop_id: 7)
 Drink.create(name: "soy milk tea", shop_id: 7)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (61..70).to_a.sample, shop_id: 7)
+end
+
 #8 Honey B Tea House
 Drink.create(name: "milk tea", shop_id: 8)
 Drink.create(name: "matcha green milk tea", shop_id: 8)
@@ -128,6 +156,10 @@ Drink.create(name: "barley milk tea", shop_id: 8)
 Drink.create(name: "caramel milk black tea", shop_id: 8)
 Drink.create(name: "honey milk black tea", shop_id: 8)
 Drink.create(name: "mint milk black tea", shop_id: 8)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (71..80).to_a.sample, shop_id: 8)
+end
 
 #9 i-Tea
 Drink.create(name: "signature black tea", shop_id: 9)
@@ -141,6 +173,10 @@ Drink.create(name: "premium black tea", shop_id: 9)
 Drink.create(name: "japanese matcha red bean", shop_id: 9)
 Drink.create(name: "rose green tea", shop_id: 9)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (81..90).to_a.sample, shop_id: 9)
+end
+
 #10 InfiniTea
 Drink.create(name: "classic milk tea", shop_id: 10)
 Drink.create(name: "blueberry green tea", shop_id: 10)
@@ -152,6 +188,10 @@ Drink.create(name: "oolong milk tea", shop_id: 10)
 Drink.create(name: "earl grey milk tea", shop_id: 10)
 Drink.create(name: "taro milk tea", shop_id: 10)
 Drink.create(name: "malted milk tea", shop_id: 10)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (91..100).to_a.sample, shop_id: 10)
+end
 
 #11 Little Sweet
 Drink.create(name: "assam black tea", shop_id: 11)
@@ -165,6 +205,10 @@ Drink.create(name: "oreo milkshake", shop_id: 11)
 Drink.create(name: "avocado milkshake", shop_id: 11)
 Drink.create(name: "banana milkshake", shop_id: 11)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (101..110).to_a.sample, shop_id: 11)
+end
+
 #12 Mr. & Mrs. Tea House
 Drink.create(name: "classic black tea crema", shop_id: 12)
 Drink.create(name: "jasmine green tea crema", shop_id: 12)
@@ -176,6 +220,10 @@ Drink.create(name: "peach black tea crema", shop_id: 12)
 Drink.create(name: "peach green tea crema", shop_id: 12)
 Drink.create(name: "strawberry black tea crema", shop_id: 12)
 Drink.create(name: "winter melon tea crema", shop_id: 12)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (111..120).to_a.sample, shop_id: 12)
+end
 
 #13 Purple Kow
 Drink.create(name: "purplekow iced black tea", shop_id: 13)
@@ -189,6 +237,10 @@ Drink.create(name: "hazelnut milk black tea", shop_id: 13)
 Drink.create(name: "almond milk black tea", shop_id: 13)
 Drink.create(name: "chocolate milk black tea", shop_id: 13)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (121..130).to_a.sample, shop_id: 13)
+end
+
 #14 Quickly
 Drink.create(name: "bubble milk tea", shop_id: 14)
 Drink.create(name: "jasmine milk green", shop_id: 14)
@@ -200,6 +252,10 @@ Drink.create(name: "chocolate milk tea", shop_id: 14)
 Drink.create(name: "coconut milk tea", shop_id: 14)
 Drink.create(name: "coffee milk tea", shop_id: 14)
 Drink.create(name: "earl grey milk tea", shop_id: 14)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (131..140).to_a.sample, shop_id: 14)
+end
 
 #15 Sharetea
 Drink.create(name: "brown rice milk tea", shop_id: 15)
@@ -213,6 +269,10 @@ Drink.create(name: "ginger milk tea", shop_id: 15)
 Drink.create(name: "okinawa pearl milk tea", shop_id: 15)
 Drink.create(name: "hokkaido milk tea", shop_id: 15)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (141..150).to_a.sample, shop_id: 15)
+end
+
 #16 Super Cue Cafe
 Drink.create(name: "iced milk fresh taro with egg pudding", shop_id: 16)
 Drink.create(name: "iced milk fresh taro with mango pudding", shop_id: 16)
@@ -224,6 +284,10 @@ Drink.create(name: "iced milk caramel grass jelly", shop_id: 16)
 Drink.create(name: "iced milk honey grass jelly", shop_id: 16)
 Drink.create(name: "black tea with crema", shop_id: 16)
 Drink.create(name: "green tea with crema", shop_id: 16)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (151..160).to_a.sample, shop_id: 16)
+end
 
 #17 Sweet Hut
 Drink.create(name: "lychee tapioca milk tea", shop_id: 17)
@@ -237,6 +301,10 @@ Drink.create(name: "almond jelly milk tea", shop_id: 17)
 Drink.create(name: "winter melon milk tea", shop_id: 17)
 Drink.create(name: "tapioca green milk tea", shop_id: 17)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (161..170).to_a.sample, shop_id: 17)
+end
+
 #18 Tea FM
 Drink.create(name: "house special milk tea", shop_id: 18)
 Drink.create(name: "jasmine milk tea", shop_id: 18)
@@ -248,6 +316,10 @@ Drink.create(name: "fresh thai tea", shop_id: 18)
 Drink.create(name: "white dragon", shop_id: 18)
 Drink.create(name: "blossom cloud", shop_id: 18)
 Drink.create(name: "jaded lime", shop_id: 18)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (171..180).to_a.sample, shop_id: 18)
+end
 
 #19 Tea Papa
 Drink.create(name: "teapapa milk tea", shop_id: 19)
@@ -261,6 +333,10 @@ Drink.create(name: "chocolate milk black green tea", shop_id: 19)
 Drink.create(name: "matcha milk green tea", shop_id: 19)
 Drink.create(name: "honey black green roasted oolong tea", shop_id: 19)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (181..190).to_a.sample, shop_id: 19)
+end
+
 #20 Teaway
 Drink.create(name: "milk tea", shop_id: 20)
 Drink.create(name: "milk green tea", shop_id: 20)
@@ -272,6 +348,10 @@ Drink.create(name: "coconut milk tea", shop_id: 20)
 Drink.create(name: "hazelnut milk tea", shop_id: 20)
 Drink.create(name: "toffee milk tea", shop_id: 20)
 Drink.create(name: "almond shake", shop_id: 20)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (191..200).to_a.sample, shop_id: 20)
+end
 
 #21 The Sweet House
 Drink.create(name: "milk tea", shop_id: 21)
@@ -285,6 +365,10 @@ Drink.create(name: "cafe mocha", shop_id: 21)
 Drink.create(name: "white chocolate mocha", shop_id: 21)
 Drink.create(name: "honey green tea", shop_id: 21)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (201..210).to_a.sample, shop_id: 21)
+end
+
 #22 TJ Cups
 Drink.create(name: "tj signature milk tea", shop_id: 22)
 Drink.create(name: "mango bits green milk tea", shop_id: 22)
@@ -296,6 +380,10 @@ Drink.create(name: "grass jelly milk tea", shop_id: 22)
 Drink.create(name: "red bean and grass jelly milk tea", shop_id: 22)
 Drink.create(name: "taro and red bean milk tea", shop_id: 22)
 Drink.create(name: "matcha and red bean milk tea", shop_id: 22)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (211..220).to_a.sample, shop_id: 22)
+end
 
 #23 Tpumps
 Drink.create(name: "rose vanilla green milk tea", shop_id: 23)
@@ -309,6 +397,10 @@ Drink.create(name: "mango strawberry black tea", shop_id: 23)
 Drink.create(name: "coconut salted caramel black milk tea", shop_id: 23)
 Drink.create(name: "peach rose green tea", shop_id: 23)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (221..230).to_a.sample, shop_id: 23)
+end
+
 #24 Wonderful Dessert & Cafe
 Drink.create(name: "tapioca milk tea", shop_id: 24)
 Drink.create(name: "pudding tapioca milk tea", shop_id: 24)
@@ -321,6 +413,10 @@ Drink.create(name: "thai tea tapioca", shop_id: 24)
 Drink.create(name: "peach tapioca", shop_id: 24)
 Drink.create(name: "green apple tapioca", shop_id: 24)
 
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (231..240).to_a.sample, shop_id: 24)
+end
+
 #25 Xpresso Tea
 Drink.create(name: "almond milk tea", shop_id: 25)
 Drink.create(name: "black sesame milk tea", shop_id: 25)
@@ -332,3 +428,7 @@ Drink.create(name: "cinnamon milk tea", shop_id: 25)
 Drink.create(name: "coconut milk tea", shop_id: 25)
 Drink.create(name: "coffee milk tea", shop_id: 25)
 Drink.create(name: "earl grey milk tea", shop_id: 25)
+
+20.times do
+  Review.create(rating: (1..5).to_a.sample, body: Faker::Lorem.paragraph, user_id: (1..20).to_a.sample, drink_id: (241..250).to_a.sample, shop_id: 25)
+end
