@@ -39,18 +39,18 @@
   <header>
     <nav>
       <ul class="cap-letters">
-        <li><a href="/shops"><i class="fa fa-map-marker"></i>Shops</a></li>
+        <li><a href="/shops"><i class="fa fa-map-marker"></i> Shops</a></li>
         <% if current_user %>
-        <li><a href="/users/<%= current_user.id %>"><i class="fa fa-user"></i>Profile</a></li>
-        <li><a href="/logout"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+        <li><a href="/users/<%= current_user.id %>"><i class="fa fa-user"></i> Profile</a></li>
+        <li><a href="/logout"><i class="fa fa-sign-out"></i> Sign Out</a></li>
         <% else %>
-        <li><a href="/users/new"><i class="fa fa-user-plus"></i>Sign Up</a></li>
-        <li><a href="/sessions/new"><i class="fa fa-sign-in"></i>Sign In</a></li>
+        <li><a href="/users/new"><i class="fa fa-user-plus"></i> Sign Up</a></li>
+        <li><a href="/sessions/new"><i class="fa fa-sign-in"></i> Sign In</a></li>
         <% end %>
       </ul>
     </nav>
-    <div><img src="https://s3.amazonaws.com/herokubobafetch/Boba-Fetch-1-Colors-Updated.png"/></div>
-    <div style="font-family: 'Lobster Two'; font-size: 3.5em"><a href="/">Boba Fetch</a></div><div style="font-size: 1.35em; font-family: Pacifico; margin-top: -1.25em">your<span style="color: green">boba</span>hunter</div>
+    <div style="margin-top: -1.25em"><img src="https://s3.amazonaws.com/herokubobafetch/Boba-Fetch-1-Colors-Updated.png"/></div>
+    <div style="font-family: 'Lobster Two'; font-size: 3.5em; margin-top: -.3em"><a href="/">Boba Fetch</a></div><div style="font-size: 1.35em; font-family: Pacifico; margin-top: -1.25em">your<span style="color: green">boba</span>hunter</div>
   </header>
   <%= yield %>
 </body>
