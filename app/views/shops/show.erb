@@ -111,10 +111,10 @@
     <%= review.updated_at.year %> <%= review.updated_at.strftime("%B") %> <%= review.updated_at.day %><br>
 
     <% if current_user && review.user_id == current_user.id %>
-    <a href="/shops/<%= review.shop_id %>/reviews/<%=review.id%>/edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
+    <div class="edit-link"><a href="/shops/<%= review.shop_id %>/reviews/<%=review.id%>/edit"><i class="fa fa-pencil-square-o"></i> Edit</a></div>
     <form id="delete-rev" method="POST" action="/shop/<%= review.shop_id %>/reviews/<%=review.id%>">
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete">
+      <input class="delete-button" type="submit" value="Delete">
     </form>
     <% end %>
     <br><br>
