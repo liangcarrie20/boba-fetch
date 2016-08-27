@@ -87,3 +87,16 @@ width: 96.66666%;
 .shop-banner {
     text-align: center;
 }
+
+input {
+ background:none!important;
+ color: red;
+ border:none; 
+ padding:0!important;
+ font: inherit;
+ cursor: pointer;
+}
+
+input:hover {
+    text-decoration: underline;
+}
