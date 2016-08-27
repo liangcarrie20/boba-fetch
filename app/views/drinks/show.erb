@@ -98,7 +98,6 @@
       <i class="star fa fa-star-o"></i>
       <i class="star fa fa-star-o"></i>
     <% end %>
-    <a href="/shops/<%=review.shop_id%>/drinks/<%=review.drink_id%>"><%= review.drink.name %></a><br>
     <%= review.body %><br>
     <a href="/users/<%=review.user_id%>"><%= review.user.username %></a> | 
     <%= review.updated_at.year %> <%= review.updated_at.strftime("%B") %> <%= review.updated_at.day %><br><br>
