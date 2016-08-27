@@ -1,21 +1,109 @@
-<div class="container">
-  <a href="/shops/<%=@shop.id%>/drinks/<%=@drink.id%>/upload">Upload a pic of the <%=@drink.name%>!</a>
-  <h1><%= @shop.name %>'s <%= @drink.name %> has an average rating of <%=@reviews.average("rating") %> with <%= @reviews.count %> reviews:</h1>
-
-  <% @reviews.each do |review| %>
-  <% @user_id = review.user_id %>
-  <% @user_username = User.find(@user_id).username %>
-  <div class="index-review">
-    <div class="shop-name"><%= @shop.name %></div>
-    <div class="drink-name"><%=@drink.name.capitalize %></div>
-    <div class="drink-rating"> <%= review.rating %> stars</div>
-    <div class="review-body"><%= review.body %></div>
-    <div class="reviewer">by: <a href="/users/<%=@user_id%>"><%= @user_username %></a></div>
-    <div class="timestamp">on: <%= review.updated_at %></div>
-  </div>
+<div class="shop-banner">
+  <h1 class="cap-letters"><%= @drink.name %></h1>
+  <a href="/shops/<%=@shop.id%>"><%= @shop.name %></a><br>
+   <% if @reviews.average("rating") == 5 %>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+  <% elsif @reviews.average("rating") < 5 && @reviews.average("rating") >= 4.5 %>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star-half-o"></i>
+  <% elsif @reviews.average("rating") < 4.5 && @reviews.average("rating") >= 4 %>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star-o"></i>
+  <% elsif @reviews.average("rating") < 4 && @reviews.average("rating") >= 3.5 %>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star-half-o"></i>
+    <i class="star fa fa-star-o"></i>
+  <% elsif @reviews.average("rating") < 3.5 && @reviews.average("rating") >= 3 %>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
+  <% elsif @reviews.average("rating") < 3 && @reviews.average("rating") >= 2.5 %>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star-half-o"></i>
+    <i class="star fa fa-star-o"></i>
+    <i class="star fa fa-star-o"></i>
+  <% elsif @reviews.average("rating") < 2.5 && @reviews.average("rating") >= 2 %>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star-o"></i>
+    <i class="star fa fa-star-o"></i>
+    <i class="star fa fa-star-o"></i>
+  <% elsif shop.reviews.average("rating") < 2 && shop.reviews.average("rating") >= 1.5 %>
+    <i class="star fa fa-star"></i>
+    <i class="star fa fa-star-half-o"></i>
+    <i class="star fa fa-star-o"></i>
+    <i class="star fa fa-star-o"></i>
+    <i class="star fa fa-star-o"></i>
+  <% else %>
+    <i class="star fa fa-star"></i>
   <% end %>
-  <div class="links">
-    <a href="/shops/<%=@shop.id%>/reviews/new">Write a review for <%=@drink.name%></a><br>
-    <a href="/shops/<%=@shop.id%>">back to <%=@shop.name%></a>
+   | <%= @reviews.count %> reviews
+  <div>
+    <% if current_user %>
+      <div class="links">
+        <a href="/shops/<%=@shop.id%>/reviews/new"><i class="fa fa-pencil"></i> Write a review</a> | 
+        <a href="/shops/<%=@shop.id%>/drinks/<%=@drink.id%>/upload"><i class="fa fa-upload"></i> Upload an image</a>
+      </div>
+    <% else %>
+      <a href="/sessions/new"><i class="fa fa-sign-in"></i> Sign in</a> to add shops, drinks, and reviews!
+    <% end %>
   </div>
+</div><br>
+
+<% @reviews.each do |review| %>
+  <div class="span-3">
+    <% if review.rating == 5 %>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+    <% elsif review.rating == 4 %>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star-o"></i>
+    <% elsif review.rating == 3 %>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
+    <% elsif review.rating == 2 %>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
+    <% else %>
+      <i class="star fa fa-star"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
+    <% end %>
+    <a href="/shops/<%=review.shop_id%>/drinks/<%=review.drink_id%>"><%= review.drink.name %></a><br>
+    <%= review.body %><br>
+    <a href="/users/<%=review.user_id%>"><%= review.user.username %></a> | 
+    <%= review.updated_at.year %> <%= review.updated_at.strftime("%B") %> <%= review.updated_at.day %><br><br>
+    </div>
+  <% end %>
+<div>
+  <a href="/shops/<%=@shop.id%>"><i class="fa fa-long-arrow-left"></i>back</a> to <%=@shop.name%>
 </div>
