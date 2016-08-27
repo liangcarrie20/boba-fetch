@@ -6,7 +6,7 @@ body {
 
 #map {
     height: 20em;
-    width: 20em;
+    width: 100%;
     margin: auto;
     clear: both;
 }
@@ -82,3 +82,7 @@ width: 96.66666%;
 
 @media (min-width: 600px) {
 }/*/mediaquery*/
+
+.shop-banner {
+    text-align: center;
+}
