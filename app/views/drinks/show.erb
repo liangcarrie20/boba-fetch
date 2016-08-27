@@ -100,9 +100,9 @@
     <% end %>
     <%= review.body %><br>
     <a href="/users/<%=review.user_id%>"><%= review.user.username %></a> | 
-    <%= review.updated_at.year %> <%= review.updated_at.strftime("%B") %> <%= review.updated_at.day %><br>
+    <%= review.updated_at.year %> <%= review.updated_at.strftime("%B") %> <%= review.updated_at.day %><br><br>
 
-    <% if review.user_id == current_user.id %>
+    <% if current_user && review.user_id == current_user.id %>
     <a href="/shops/<%= review.shop_id %>/reviews/<%=review.id%>/edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
     <form id="delete-rev" method="POST" action="/shop/<%= review.shop_id %>/reviews/<%=review.id%>">
       <input type="hidden" name="_method" value="DELETE">
