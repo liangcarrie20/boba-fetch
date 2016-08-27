@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
+  <meta charset="utf-8">
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Normalize across browsers -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+  
+  <!-- Google fonts -->
+  <link  rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster|Pacifico|Raleway">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  <!-- Link css stylesheet -->
   <link rel="stylesheet" href="/css/application.css">
+
+  <!-- AJAX / jQuery CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+  <!-- JavaScript: Google Maps functions-->
   <script src="/js/application.js"></script>
+
+  <!-- JavaScript: AJAX and jQuery -->
   <script src="/js/ajax.js"></script>
+
+  <!-- favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="https://s3.amazonaws.com/herokubobafetch/bubbletea.ico" />
+
+  <!-- Google Maps -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['SECRET_TOKEN'] %>&callback=initMap"></script>
+
   <title>Boba Fetch</title>
 </head>
+
 <body>
   <div class="container">
     <header>
@@ -25,14 +46,14 @@
       <div id="site-slogan">your boba hunter</div>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/shops">Shops</a></li>
+          <li><a href="/">Home<i class="fa fa-home"></i></a></li>
+          <li><a href="/shops">Shops<i class="fa fa-map-marker"></i></a></li>
           <% if current_user %>
-          <li><a href="/users/<%=current_user.id%>">Profile</a></li>
-          <li><a href="/logout">Logout</a></li>
+          <li><a href="/users/<%= current_user.id %>">Profile<i class="fa fa-user"></i></a></li>
+          <li><a href="/logout">Logout<i class="fa fa-sign-out"></i></a></li>
           <% else %>
-          <li><a href="/users/new">Register</a></li>
-          <li><a href="/sessions/new">Login</a></li>
+          <li><a href="/users/new">Register<i class="fa fa-user-plus"></i></a></li>
+          <li><a href="/sessions/new">Login<i class="fa fa-sign-in"></i></a></li>
           <% end %>
         </ul>
       </nav>
