@@ -22,3 +22,7 @@ Users can add shops, drinks, ratings and reviews
 * Google Maps JavaScript API
 * HTML5
 * CSS
+
+## Future Plans
+* Google Places API
+* Facebook O-Auth
