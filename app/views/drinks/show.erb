@@ -43,7 +43,7 @@
     <i class="star fa fa-star-o"></i>
     <i class="star fa fa-star-o"></i>
     <i class="star fa fa-star-o"></i>
-  <% elsif shop.reviews.average("rating") < 2 && shop.reviews.average("rating") >= 1.5 %>
+  <% elsif @reviews.average("rating") < 2 && @reviews.average("rating") >= 1.5 %>
     <i class="star fa fa-star"></i>
     <i class="star fa fa-star-half-o"></i>
     <i class="star fa fa-star-o"></i>
@@ -100,9 +100,17 @@
     <% end %>
     <%= review.body %><br>
     <a href="/users/<%=review.user_id%>"><%= review.user.username %></a> | 
-    <%= review.updated_at.year %> <%= review.updated_at.strftime("%B") %> <%= review.updated_at.day %><br><br>
+    <%= review.updated_at.year %> <%= review.updated_at.strftime("%B") %> <%= review.updated_at.day %><br>
+
+    <% if review.user_id == current_user.id %>
+    <a href="/shops/<%= review.shop_id %>/reviews/<%=review.id%>/edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
+    <form id="delete-rev" method="POST" action="/shop/<%= review.shop_id %>/reviews/<%=review.id%>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete">
+    </form>
     </div>
+    <% end %>
   <% end %>
-<div>
+<div><br><br>
   <a href="/shops/<%=@shop.id%>"><i class="fa fa-long-arrow-left"></i>back</a> to <%=@shop.name%>
 </div>
