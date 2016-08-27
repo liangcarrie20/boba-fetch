@@ -13,7 +13,6 @@
   </ul> -->
   <h1 class="cap-letters">Recent reviews</h1>
   <% @reviews.each do |review| %>
-  <div class="span-3">
     <% if review.rating == 5 %>
       <i class="star fa fa-star"></i>
       <i class="star fa fa-star"></i>
@@ -25,15 +24,25 @@
       <i class="star fa fa-star"></i>
       <i class="star fa fa-star"></i>
       <i class="star fa fa-star"></i>
+      <i class="star fa fa-star-o"></i>
     <% elsif review.rating == 3 %>
       <i class="star fa fa-star"></i>
       <i class="star fa fa-star"></i>
       <i class="star fa fa-star"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
     <% elsif review.rating == 2 %>
       <i class="star fa fa-star"></i>
       <i class="star fa fa-star"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
     <% else %>
       <i class="star fa fa-star"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
+      <i class="star fa fa-star-o"></i>
     <% end %>
     <a href="/shops/<%=review.shop_id%>/drinks/<%=review.drink_id%>"><%= review.drink.name %></a> | 
     <a href="/shops/<%=review.shop_id%>"><%= review.shop.name %></a><br>
