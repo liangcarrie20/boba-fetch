@@ -1,23 +1,21 @@
-<div class="container">
-    <div class="flash">
-        <% if flash[:error] %>
-        <%= flash[:error] %>
-        <% end %>
-    </div>
-  <div>
+<!-- <div id="site-welcome">
+    <img src="https://s3.amazonaws.com/herokubobafetch/Boba-Fetch-Welcome.png" alt="welcome-to-boba-fetch"/>
+</div> -->
+
+<div class="flash">
+  <% if flash[:error] %>
+    <%= flash[:error] %>
+  <% end %>
+</div>
+
+<div>
     <h1>Sign in</h1>
-  </div>
-  <div id=login-form>
+</div>
+
+<div id=login-form>
     <form action="/sessions" method="post">
-
-      <input type="email" name="user[email]" placeholder="email" required>
-      <br>
-      <input type="password" name="user[password]" placeholder="password" required>
-
+      <input type="email" name="user[email]" placeholder="email" required><br>
+      <input type="password" name="user[password]" placeholder="password" required><br>
       <input type="submit" value="Go">
     </form>
-  </div>
-  <div id="site-welcome">
-    <img src="https://s3.amazonaws.com/herokubobafetch/Boba-Fetch-Welcome.png" alt="welcome-to-boba-fetch"/>
-  </div>
 </div>
