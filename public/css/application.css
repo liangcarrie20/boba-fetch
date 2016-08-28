@@ -108,3 +108,7 @@ input {
 .delete-button:hover {
     text-decoration: underline;
 }
+
+#site-welcome {
+    text-align: center;
+}
